@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Report a post or a profile</h1>
+<form method="post" action="/api/grievances">
+  <label>Link to the post or profile <input type="url" name="content_url" required></label>
+  <label>What is wrong
+    <select name="category" required>
+      <option value="intimate_imagery">It shows me, or someone I represent, nude or in a sexual act</option>
+      <option value="impersonation">It impersonates me, or is a morphed image of me</option>
+      <option value="synthetic_media">It is AI-generated or manipulated and misleading</option>
+      <option value="content_removal">It breaks the Community Guidelines</option>
+      <option value="copyright">It uses my work without permission</option>
+      <option value="account">A problem with my account</option>
+      <option value="other">Something else</option>
+    </select>
+  </label>
+  <label>Tell us more <textarea name="details"></textarea></label>
+  <label>Your email, so we can reply <input type="email" name="reply_to" required></label>
+  <label><input type="checkbox" name="on_behalf"> I am reporting on behalf of someone else</label>
+  <button type="submit">Send report</button>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<main class="feed">
+  {% for post in feed %}
+    {% include "post_card.html" %}
+  {% endfor %}
+</main>
+{% include "footer.html" %}
+{% endblock %}

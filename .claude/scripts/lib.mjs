@@ -1,0 +1,241 @@
+/**
+ * Shared helpers for nodal's hooks and scripts: workspace layout, schema
+ * validation and findings. Node built-ins only, so a fresh clone needs no install.
+ */
+
+import { readFileSync, readdirSync, statSync, existsSync, realpathSync } from 'node:fs';
+import { join, extname, relative, resolve, dirname, basename } from 'node:path';
+
+const SCHEMA_DIR = '.claude/schemas';
+const SKIP_DIRS = new Set(['.git', 'node_modules']);
+// Guard files agents may not write, so the layout does not list them, but which still have a schema.
+const GUARD_SCHEMAS = { 'catalog/rules.json': 'rule-catalog.schema.json' };
+
+/** The nearest directory at or above `start` holding a workspace layout, so hooks survive a `cd` and worktrees. */
+export function workspaceRoot(start = process.cwd()) {
+  for (let dir = resolve(start); ; dir = dirname(dir)) {
+    if (existsSync(join(dir, SCHEMA_DIR, 'layout.json'))) return dir;
+    if (dirname(dir) === dir) return undefined;
+  }
+}
+
+/** The path as the disk spells it, so another case or a symlink cannot dodge a layout rule. */
+export function realPath(path) {
+  if (existsSync(path)) return realpathSync.native(path);
+  const parent = dirname(path);
+  return parent === path ? path : join(realPath(parent), basename(path));
+}
+
+/** Problems with a SKILL.md frontmatter. A bare `: ` or ` #` in a value is not valid YAML. */
+export function frontmatterErrors(text, name) {
+  const front = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+  const errors = [];
+  if (!new RegExp(`^name: ${name}\\s*$`, 'm').test(front)) errors.push(`frontmatter needs "name: ${name}"`);
+  const description = front.match(/^description: (.+?)\s*$/m)?.[1];
+  if (!description) errors.push('frontmatter needs a description');
+  else if (description.startsWith('"') ? !/^"(?:[^"\\]|\\.)*"$/.test(description) : /: | #/.test(description)) {
+    errors.push('description is not valid YAML: wrap it in double quotes and escape inner quotes');
+  }
+  return errors;
+}
+
+export function loadLayout(root = process.cwd()) {
+  const layout = JSON.parse(readFileSync(join(root, SCHEMA_DIR, 'layout.json'), 'utf8'));
+  return layout.paths.map(rule => ({ ...rule, regex: patternToRegex(rule.pattern) }));
+}
+
+// `*` matches one path segment, `**` matches any depth.
+function patternToRegex(pattern) {
+  const escape = s => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
+  const body = pattern.split('**').map(part => part.split('*').map(escape).join('[^/]+')).join('.*');
+  return new RegExp(`^${body}$`);
+}
+
+export function matchRule(layout, relPath) {
+  return layout.find(rule => rule.regex.test(relPath));
+}
+
+/** Workspace-relative paths (forward slashes) of every file under `dir`. */
+export function listFiles(dir, root = dir) {
+  if (!existsSync(dir)) return [];
+  const out = [];
+  for (const entry of readdirSync(dir)) {
+    if (SKIP_DIRS.has(entry)) continue;
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) out.push(...listFiles(full, root));
+    else out.push(relative(root, full).replace(/\\/g, '/'));
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// JSON Schema validation
+// shortcut: covers the draft 2020-12 keywords our schemas use and throws on any
+// other keyword, so a schema can never pass silently. Swap in ajv if schemas
+// need oneOf/allOf/$defs.
+
+const SUPPORTED = new Set([
+  '$schema', '$id', '$ref', 'title', 'description', 'default', 'examples',
+  'type', 'enum', 'required', 'properties', 'additionalProperties', 'items',
+  'pattern', 'format', 'minLength', 'minimum', 'maximum', 'minItems',
+]);
+
+const FORMATS = {
+  'date-time': v => /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(v) && !Number.isNaN(Date.parse(v)),
+  date: v => /^\d{4}-\d{2}-\d{2}$/.test(v) && !Number.isNaN(Date.parse(v)),
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+};
+
+const TYPES = {
+  string: v => typeof v === 'string',
+  number: v => typeof v === 'number' && Number.isFinite(v),
+  integer: v => Number.isInteger(v),
+  boolean: v => typeof v === 'boolean',
+  null: v => v === null,
+  array: v => Array.isArray(v),
+  object: v => v !== null && typeof v === 'object' && !Array.isArray(v),
+};
+
+const schemaCache = new Map();
+
+export function loadSchema(name, root = process.cwd()) {
+  const file = join(root, SCHEMA_DIR, name);
+  if (!schemaCache.has(file)) schemaCache.set(file, JSON.parse(readFileSync(file, 'utf8')));
+  return schemaCache.get(file);
+}
+
+/** Returns a list of human-readable errors; empty means valid. */
+export function validate(schema, value, at = '$', root = process.cwd(), errors = []) {
+  for (const key of Object.keys(schema)) {
+    if (!SUPPORTED.has(key)) throw new Error(`Unsupported schema keyword "${key}" at ${at}`);
+  }
+  if (schema.$ref) return validate(loadSchema(schema.$ref, root), value, at, root, errors);
+
+  const types = [].concat(schema.type ?? []);
+  if (types.length && !types.some(t => TYPES[t]?.(value))) {
+    errors.push(`${at}: expected ${types.join(' or ')}`);
+    return errors;
+  }
+  if (schema.enum && !schema.enum.includes(value)) {
+    errors.push(`${at}: must be one of ${schema.enum.map(String).join(', ')}`);
+  }
+  if (typeof value === 'string') {
+    if (schema.pattern && !new RegExp(schema.pattern, 'u').test(value)) errors.push(`${at}: does not match ${schema.pattern}`);
+    if (schema.format && FORMATS[schema.format] && !FORMATS[schema.format](value)) errors.push(`${at}: not a valid ${schema.format}`);
+    if (schema.minLength !== undefined && value.length < schema.minLength) errors.push(`${at}: shorter than ${schema.minLength}`);
+  }
+  if (typeof value === 'number') {
+    if (schema.minimum !== undefined && value < schema.minimum) errors.push(`${at}: below minimum ${schema.minimum}`);
+    if (schema.maximum !== undefined && value > schema.maximum) errors.push(`${at}: above maximum ${schema.maximum}`);
+  }
+  if (Array.isArray(value)) {
+    if (schema.minItems !== undefined && value.length < schema.minItems) errors.push(`${at}: needs at least ${schema.minItems} item(s)`);
+    if (schema.items) value.forEach((item, i) => validate(schema.items, item, `${at}[${i}]`, root, errors));
+  }
+  if (TYPES.object(value)) {
+    for (const key of schema.required ?? []) {
+      if (!(key in value)) errors.push(`${at}: missing required "${key}"`);
+    }
+    for (const [key, child] of Object.entries(value)) {
+      if (schema.properties?.[key]) validate(schema.properties[key], child, `${at}.${key}`, root, errors);
+      else if (schema.additionalProperties === false) errors.push(`${at}: unexpected property "${key}"`);
+    }
+  }
+  return errors;
+}
+
+// ---------------------------------------------------------------------------
+// Clause references
+// shortcut: a reference passes if it is a catalog clause or a sub-clause of one. That stops an
+// invented rule number; it does not check that the clause says what the finding claims.
+
+const catalogCache = new Map();
+
+export function loadCatalog(root = process.cwd()) {
+  const file = join(root, 'catalog/rules.json');
+  if (!catalogCache.has(file)) catalogCache.set(file, JSON.parse(readFileSync(file, 'utf8')));
+  return catalogCache.get(file);
+}
+
+/** Problems with a finding's `clause`: every comma- or semicolon-separated reference must be in the catalog for its framework. */
+export function clauseErrors(finding, at = '$', root = process.cwd()) {
+  if (typeof finding?.framework !== 'string' || typeof finding.clause !== 'string') return []; // the schema reports these
+  const clauses = loadCatalog(root).rules.filter(r => r.instrument === finding.framework).map(r => r.clause);
+  if (!clauses.length) return []; // an unknown framework: the schema reports it
+  const refs = finding.clause.split(/[,;]/).map(s => s.trim()).filter(Boolean);
+  if (!refs.length) return [`${at}.clause: names no reference`];
+  return refs
+    .filter(ref => !clauses.some(c => ref === c || ref.startsWith(`${c}(`)))
+    .map(ref => `${at}.clause: "${ref}" is not a ${finding.framework} clause in catalog/rules.json. Cite it as the catalog does, like "${clauses[0]}", and put other instruments in cross_reference.`);
+}
+
+/** Parses a .json/.jsonl file and validates it against the schema its layout rule names. */
+export function checkFile(relPath, root = process.cwd(), layout = loadLayout(root)) {
+  const ext = extname(relPath);
+  if (ext !== '.json' && ext !== '.jsonl') return [];
+  const text = readFileSync(join(root, relPath), 'utf8');
+
+  const records = [];
+  if (ext === '.json') {
+    try { records.push(['$', JSON.parse(text)]); }
+    catch (e) { return [`invalid JSON: ${e.message}`]; }
+  } else {
+    const lines = text.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      try { records.push([`line ${i + 1}`, JSON.parse(lines[i])]); }
+      catch (e) { return [`line ${i + 1}: invalid JSON: ${e.message}`]; }
+    }
+  }
+
+  const rule = matchRule(layout, relPath);
+  const schemaName = rule?.schema ?? GUARD_SCHEMAS[relPath];
+  if (!schemaName) return [];
+  const schema = loadSchema(schemaName, root);
+  return records.flatMap(([at, value]) => [
+    ...validate(schema, value, at, root),
+    ...(schemaName === 'report.schema.json' && Array.isArray(value?.findings) ? value.findings.flatMap((f, i) => clauseErrors(f, `${at}.findings[${i}]`, root)) : []),
+    ...(schemaName === 'rule-catalog.schema.json' ? duplicateIds(value?.rules) : []),
+  ]);
+}
+
+function duplicateIds(rules = []) {
+  const ids = rules.map(r => r.id);
+  return [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))].map(id => `$.rules: duplicate id "${id}"`);
+}
+
+// ---------------------------------------------------------------------------
+// Findings
+
+/** Findings from each company's latest report, so a re-audit replaces the last one instead of adding to it. */
+export function loadFindings(company, root = process.cwd()) {
+  return latestReports(root)
+    .filter(r => !company || r.company_id === company)
+    .flatMap(r => (r.findings ?? []).map(f => ({ ...f, company_id: r.company_id, assessment_id: r.assessment_id })));
+}
+
+export function latestReports(root = process.cwd()) {
+  const latest = new Map();
+  for (const r of loadReports(root).sort((a, b) => Date.parse(a.started_at) - Date.parse(b.started_at))) latest.set(r.company_id, r);
+  return [...latest.values()];
+}
+
+/** Exits with a message when a company has no report, so a typo is not mistaken for a clean audit. */
+export function requireReport(company, root = process.cwd()) {
+  if (loadReports(root).some(r => r.company_id === company)) return;
+  console.error(`No report found for company "${company}" under assessments/. Run /audit first, or check the id.`);
+  process.exit(1);
+}
+
+export function loadReports(root = process.cwd()) {
+  const dir = join(root, 'assessments');
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .map(id => join(dir, id, 'report.json'))
+    .filter(existsSync)
+    .map(file => JSON.parse(readFileSync(file, 'utf8')));
+}
+
+export function packageVersion(root = process.cwd()) {
+  return JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).version;
+}

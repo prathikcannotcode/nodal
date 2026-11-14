@@ -1,0 +1,307 @@
+{
+  "last_verified": "2026-11-14",
+  "instruments": [
+    {
+      "code": "IT-RULES",
+      "title": "Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, Part II",
+      "notifications": [
+        { "number": "G.S.R. 139(E)", "date": "2021-02-25", "read": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf", "note": "Principal rules. Read from a copy of the gazette PDF hosted by PRS, not from egazette.gov.in." },
+        { "number": "S.O. 942(E)", "date": "2021-02-25", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2021/225497.pdf", "note": "Sets fifty lakh registered users in India as the significant social media intermediary threshold under rule 2(1)(v)." },
+        { "number": "G.S.R. 794(E)", "date": "2022-10-28", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf", "note": "Substituted rule 3(1)(a), (b), (f) and 3(2)(a)(i); inserted 3(1)(m), (n) and rule 3A." },
+        { "number": "G.S.R. 275(E)", "date": "2023-04-06", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf", "note": "Online gaming and fact-check amendments; renumbered 3(1)(b) to sub-clauses (i)-(xi); added the 'prominently publish' Explanation to rule 3(2)." },
+        { "number": "G.S.R. 775(E)", "date": "2025-10-22", "read": false, "note": "NOT READ. Secondary sources say it substituted rule 3(1)(d): who may issue a takedown intimation and what it must contain. G.S.R. 120(E) amends the clause as it stood after this notification, so the three-hour clock is confirmed but the rest of 3(1)(d) is not." },
+        { "number": "G.S.R. 120(E)", "date": "2026-02-10", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf", "note": "In force 20 February 2026. Synthetically generated information, and the shorter clocks in rule 3(1)(c), 3(1)(d), 3(2)(a)(i) and 3(2)(b)." }
+      ]
+    },
+    {
+      "code": "ECOM-RULES",
+      "title": "Consumer Protection (E-Commerce) Rules, 2020, grievance duties only",
+      "notifications": [
+        { "number": "G.S.R. 462(E)", "date": "2020-07-23", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf", "note": "Principal rules." },
+        { "number": "G.S.R. 328(E)", "date": "2021-05-17", "read": false, "note": "NOT READ. A legal database footnote says it substituted rule 4(1) (nodal officer) only. Rule 4(1) is left out of this catalog for that reason." }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "IT-3-1-a", "instrument": "IT-RULES", "clause": "Rule 3(1)(a)", "applies_to": ["intermediary"],
+      "obligation": "Prominently publish the rules and regulations, privacy policy and user agreement on the website, the app or both, in English or an Eighth Schedule language of the user's choice, and ensure compliance with them.",
+      "deadline": "Always",
+      "evidence_hints": ["Footer and legal page templates", "Routes for terms, privacy and community guidelines", "Links on the signup screen and the app's settings"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf"
+    },
+    {
+      "id": "IT-3-1-b", "instrument": "IT-RULES", "clause": "Rule 3(1)(b)", "applies_to": ["intermediary"],
+      "obligation": "Inform users of those documents and make reasonable efforts, by itself and through its users, that nobody hosts or shares information that: (i) belongs to another person; (ii) is obscene, pornographic, paedophilic, invasive of privacy, harassing on the basis of gender, racially or ethnically objectionable, encourages money laundering or gambling, or promotes enmity between groups; (iii) is harmful to a child; (iv) infringes intellectual property; (v) deceives about the origin of a message or is knowingly false or misleading; (vi) impersonates another person; (vii) threatens the unity, security or sovereignty of India or public order; (viii) contains a virus or malicious code; (ix), (x) concerns online games that are not permissible; (xi) violates any law.",
+      "deadline": "Always",
+      "evidence_hints": ["The prohibited content clause in the terms or community guidelines", "Report and moderation flows that act on those categories"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf",
+      "note": "Sub-clauses (ix) and (x) on online games came from G.S.R. 275(E). Whether later online gaming legislation changed them was not checked."
+    },
+    {
+      "id": "IT-3-1-c", "instrument": "IT-RULES", "clause": "Rule 3(1)(c)", "applies_to": ["intermediary"],
+      "obligation": "Periodically tell users, in a simple and effective manner, that: (i) on non-compliance with the terms the intermediary may terminate or suspend access immediately, or remove the information, or both; (ii) a user responsible for unlawful information may face penalty or punishment under the IT Act or other law; (iii) offences that must be reported under a law such as the BNSS 2023 or the POCSO Act will be reported to the appropriate authority.",
+      "deadline": "At least once every three months",
+      "evidence_hints": ["A scheduled job, cron entry or campaign that sends the reminder, and its interval", "The reminder template: does it carry all three limbs", "A log showing the last sends"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was once every year before 20 February 2026."
+    },
+    {
+      "id": "IT-3-1-ca", "instrument": "IT-RULES", "clause": "Rule 3(1)(ca)", "applies_to": ["sgi"],
+      "obligation": "Where the product lets users create or share synthetically generated information, additionally tell users that: (i) using it to make unlawful synthetic content under rule 3(3)(a)(i) may attract penalty or punishment under the laws the clause lists; (ii) a contravention may lead to removal of the content, suspension or termination of the account, disclosure of the user's identity to a victim complainant in accordance with law, and mandatory reporting.",
+      "deadline": "No separate period stated; read with the three-monthly notice in Rule 3(1)(c)",
+      "evidence_hints": ["Terms, AI feature policy and the generator's own screens", "The rule 3(1)(c) reminder template"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf"
+    },
+    {
+      "id": "IT-3-1-cb", "instrument": "IT-RULES", "clause": "Rule 3(1)(cb)", "applies_to": ["sgi"],
+      "obligation": "On becoming aware, on its own, through actual knowledge or through a grievance, of a violation of rule 3(3) involving synthetically generated information, take expeditious and appropriate action, including removal, account suspension, identity disclosure to a victim in accordance with law, and mandatory reporting.",
+      "deadline": "Expeditiously; no period stated",
+      "evidence_hints": ["A report category for AI-generated or deepfake content", "The moderation playbook for synthetic media", "Account action code paths"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf"
+    },
+    {
+      "id": "IT-3-1-d", "instrument": "IT-RULES", "clause": "Rule 3(1)(d)", "applies_to": ["intermediary"],
+      "obligation": "On actual knowledge through a court order, or an intimation from an officer the Appropriate Government has authorised in writing, remove or disable access to the unlawful information.",
+      "deadline": "Within 3 hours of receiving the order or intimation",
+      "evidence_hints": ["An admin action that disables content by URL or ID", "A runbook for court orders and government intimations", "An on-call route that is staffed outside office hours", "An audit log of who disabled what and when", "SLA constants still set to 36 hours"],
+      "default_severity": "critical", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was 36 hours before 20 February 2026. G.S.R. 775(E), which rewrote the rest of this clause in 2025, was not read: who may issue an intimation and what it must contain are unconfirmed here. For police, G.S.R. 120(E) requires an officer not below Deputy Inspector General."
+    },
+    {
+      "id": "IT-3-1-f", "instrument": "IT-RULES", "clause": "Rule 3(1)(f)", "applies_to": ["intermediary"],
+      "obligation": "Periodically inform users, in English or an Eighth Schedule language of their choice, of the rules and regulations, privacy policy or user agreement, or of any change to them.",
+      "deadline": "At least once a year",
+      "evidence_hints": ["A change-notice email or in-app banner", "A changelog or version date on the legal pages"],
+      "default_severity": "low", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf",
+      "note": "G.S.R. 120(E) did not amend this clause. The three-monthly duty is Rule 3(1)(c)."
+    },
+    {
+      "id": "IT-3-1-g", "instrument": "IT-RULES", "clause": "Rule 3(1)(g)", "applies_to": ["intermediary"],
+      "obligation": "Where information is removed or disabled under rule 3(1)(d), voluntarily under 3(1)(b), or on a grievance, preserve it and the associated records for investigation, without vitiating the evidence.",
+      "deadline": "180 days, or longer if a court or an authorised agency requires",
+      "evidence_hints": ["Delete or purge jobs that touch removed, hidden or moderated content", "Retention settings on object storage and moderation tables", "Whether 'associated records' such as uploader, timestamps and logs survive"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
+      "note": "In tension with erasure duties under the DPDP Act. nodal reports the tension and refers to Vigil; it does not resolve it."
+    },
+    {
+      "id": "IT-3-1-h", "instrument": "IT-RULES", "clause": "Rule 3(1)(h)", "applies_to": ["intermediary"],
+      "obligation": "Retain the information collected from a user for registration after the registration is cancelled or withdrawn.",
+      "deadline": "180 days after cancellation or withdrawal",
+      "evidence_hints": ["Account closure and deletion jobs", "What happens to the registration fields: email, phone, signup metadata"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
+      "note": "In tension with erasure duties under the DPDP Act. nodal reports the tension and refers to Vigil; it does not resolve it."
+    },
+    {
+      "id": "IT-3-1-j", "instrument": "IT-RULES", "clause": "Rule 3(1)(j)", "applies_to": ["intermediary"],
+      "obligation": "Provide information under its control, or assistance, to a lawfully authorised Government agency for identity verification, or for the prevention, detection, investigation or prosecution of offences, or for cyber security incidents. The order must be in writing and state its purpose.",
+      "deadline": "As soon as possible, and within 72 hours of receiving the order",
+      "evidence_hints": ["A law enforcement request runbook", "An intake address or portal for agencies", "A register of requests and response times"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
+      "note": "G.S.R. 275(E) set 24 hours for online gaming intermediaries offering permissible real money games. Online gaming is not checked."
+    },
+    {
+      "id": "IT-3-2-a", "instrument": "IT-RULES", "clause": "Rule 3(2)(a)", "applies_to": ["intermediary"],
+      "obligation": "Prominently publish the name of the Grievance Officer, their contact details and the mechanism by which a user or victim can complain. 'Prominently publish' means clearly visible on the home page or home screen, or on a page directly accessible from it.",
+      "deadline": "Always",
+      "evidence_hints": ["Footer, contact, help and legal templates", "The live site's home page and the pages one click from it", "A generic support email with no named officer", "A complaint form or address"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-3-2-a-ack", "instrument": "IT-RULES", "clause": "Rule 3(2)(a)(i)", "applies_to": ["intermediary"],
+      "obligation": "The Grievance Officer acknowledges each complaint.",
+      "deadline": "Within 24 hours",
+      "evidence_hints": ["An automatic acknowledgement on intake", "A ticket reference in the acknowledgement", "Acknowledgement SLA values in config"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf"
+    },
+    {
+      "id": "IT-3-2-a-resolve", "instrument": "IT-RULES", "clause": "Rule 3(2)(a)(i)", "applies_to": ["intermediary"],
+      "obligation": "The Grievance Officer resolves each complaint.",
+      "deadline": "Within 7 days of receipt",
+      "evidence_hints": ["Resolution SLA constants and due-date arithmetic", "Values still set to 15 days", "Escalation jobs keyed to the due date"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was 15 days before 20 February 2026."
+    },
+    {
+      "id": "IT-3-2-a-removal", "instrument": "IT-RULES", "clause": "Rule 3(2)(a)(i)", "applies_to": ["intermediary"],
+      "obligation": "A complaint that asks for removal of information or a link relating to rule 3(1)(b), other than sub-clauses (i), (iv) and (xi), is acted on as expeditiously as possible. The intermediary may build safeguards against misuse.",
+      "deadline": "Resolved within 36 hours of the report",
+      "evidence_hints": ["A separate SLA for removal or content complaints", "Values still set to 72 hours", "How a complaint is routed to the faster queue"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was 72 hours before 20 February 2026. The excluded sub-clauses are another person's information, intellectual property and the residual 'violates any law'."
+    },
+    {
+      "id": "IT-3-2-a-orders", "instrument": "IT-RULES", "clause": "Rule 3(2)(a)(ii)", "applies_to": ["intermediary"],
+      "obligation": "The Grievance Officer receives and acknowledges any order, notice or direction from the Appropriate Government, a competent authority or a court.",
+      "deadline": "Always",
+      "evidence_hints": ["A monitored address or portal for orders", "Who is named as the recipient in the runbook"],
+      "default_severity": "medium", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf"
+    },
+    {
+      "id": "IT-3-2-b", "instrument": "IT-RULES", "clause": "Rule 3(2)(b)", "applies_to": ["intermediary"],
+      "obligation": "On a complaint by an individual, or anyone on their behalf, about content that prima facie exposes their private area, shows them in full or partial nudity or in a sexual act, or impersonates them in electronic form, including artificially morphed images, take all reasonable and practicable measures to remove or disable access to it.",
+      "deadline": "Within 2 hours of the complaint",
+      "evidence_hints": ["A dedicated report category and queue", "The SLA constant for that queue: values still set to 24 hours", "Out-of-hours staffing or automation for that queue"],
+      "default_severity": "critical", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was 24 hours before 20 February 2026."
+    },
+    {
+      "id": "IT-3-2-c", "instrument": "IT-RULES", "clause": "Rule 3(2)(c)", "applies_to": ["intermediary"],
+      "obligation": "Implement a mechanism to receive complaints under rule 3(2)(b) that lets the individual give the details needed about the content or link.",
+      "deadline": "Always",
+      "evidence_hints": ["The report form's categories and fields", "Whether a non-user or a representative can file"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf"
+    },
+    {
+      "id": "IT-3A-3", "instrument": "IT-RULES", "clause": "Rule 3A(3)", "applies_to": ["intermediary"],
+      "obligation": "A person aggrieved by the Grievance Officer's decision, or whose grievance was not resolved in time, may appeal to the Grievance Appellate Committee. The rules read do not require the intermediary to tell users about this route, so a closure message that omits it is a good-practice gap, not a breach.",
+      "deadline": "Appeal within 30 days of receiving the Grievance Officer's communication",
+      "evidence_hints": ["Closure and rejection templates", "The grievance page"],
+      "default_severity": "low", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-3A-7", "instrument": "IT-RULES", "clause": "Rule 3A(7)", "applies_to": ["intermediary"],
+      "obligation": "Comply with every order of the Grievance Appellate Committee and upload a report of that compliance on the website.",
+      "deadline": "No period stated",
+      "evidence_hints": ["A runbook step for Committee orders", "A page or section where compliance reports are posted"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf"
+    },
+    {
+      "id": "IT-3-3-a-i", "instrument": "IT-RULES", "clause": "Rule 3(3)(a)(i)", "applies_to": ["sgi"],
+      "obligation": "Deploy reasonable and appropriate technical measures, including automated tools, so that no user can create or share synthetically generated information that violates the law, including content that: (I) is child sexual abuse material, non-consensual intimate imagery, or obscene or sexually explicit; (II) creates a false document or false electronic record; (III) relates to explosives, arms or ammunition; (IV) falsely depicts a real person or event in a way likely to deceive.",
+      "deadline": "Always",
+      "evidence_hints": ["Prompt and output filters on every generation path, including image-to-image, edit and API routes", "Classifier thresholds and bypass flags", "What happens when the filter service is down"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf"
+    },
+    {
+      "id": "IT-3-3-a-ii", "instrument": "IT-RULES", "clause": "Rule 3(3)(a)(ii)", "applies_to": ["sgi"],
+      "obligation": "Every other piece of synthetically generated information carries a prominent label that is easily noticeable in the visual display, or a prominently prefixed audio disclosure for audio, and is embedded with permanent metadata or another provenance mechanism, to the extent technically feasible, including a unique identifier of the intermediary's computer resource used to make it.",
+      "deadline": "Always",
+      "evidence_hints": ["Where the label is drawn or attached", "Metadata writing at generation: C2PA, XMP, EXIF or a custom tag", "A unique identifier per asset or per generator", "Audio outputs: is the disclosure at the start"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "The notified text sets no size or duration for the label."
+    },
+    {
+      "id": "IT-3-3-b", "instrument": "IT-RULES", "clause": "Rule 3(3)(b)", "applies_to": ["sgi"],
+      "obligation": "Do not enable the modification, suppression or removal of that label, the permanent metadata or the unique identifier.",
+      "deadline": "Always",
+      "evidence_hints": ["Any code path that strips metadata: image pipelines, thumbnailers, CDN transforms, re-encoders", "Feature flags or paid tiers that hide the label", "Crop, export and download tools"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf"
+    },
+    {
+      "id": "IT-4-1-a", "instrument": "IT-RULES", "clause": "Rule 4(1)(a)", "applies_to": ["ssmi"],
+      "obligation": "Appoint a Chief Compliance Officer: key managerial personnel or another senior employee, resident in India, responsible for compliance with the Act and rules.",
+      "deadline": "Within three months of crossing the threshold",
+      "evidence_hints": ["The contact or legal page naming the officer", "Internal role documents"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
+      "note": "The rule requires the appointment. Rule 4(5) and Rule 3(2)(a) are what require details to be published."
+    },
+    {
+      "id": "IT-4-1-b", "instrument": "IT-RULES", "clause": "Rule 4(1)(b)", "applies_to": ["ssmi"],
+      "obligation": "Appoint a nodal contact person for 24x7 coordination with law enforcement: an employee other than the Chief Compliance Officer, resident in India.",
+      "deadline": "Within three months of crossing the threshold",
+      "evidence_hints": ["The contact page or law enforcement guidelines naming the role", "An on-call rota that is 24x7"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-4-1-c", "instrument": "IT-RULES", "clause": "Rule 4(1)(c)", "applies_to": ["ssmi"],
+      "obligation": "Appoint a Resident Grievance Officer: an employee resident in India who performs the Grievance Officer's functions under rule 3(2).",
+      "deadline": "Within three months of crossing the threshold",
+      "evidence_hints": ["The grievance page: is the named officer described as resident in India"],
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf"
+    },
+    {
+      "id": "IT-4-1-d", "instrument": "IT-RULES", "clause": "Rule 4(1)(d)", "applies_to": ["ssmi"],
+      "obligation": "Publish a periodic compliance report with the complaints received and the action taken, and the number of links or items removed through proactive monitoring with automated tools.",
+      "deadline": "Every month",
+      "evidence_hints": ["A report job and its schedule", "A report template and where it is published", "Past reports on the site"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-4-1A", "instrument": "IT-RULES", "clause": "Rule 4(1A)", "applies_to": ["ssmi"],
+      "obligation": "Before any information is displayed, uploaded or published: (a) require the user to declare whether it is synthetically generated; (b) deploy appropriate technical measures to verify that declaration; (c) where either confirms it, display it with a clear and prominent label or notice. Knowingly permitting, promoting or failing to act on such content is deemed a failure of due diligence.",
+      "deadline": "Before display, upload or publication",
+      "evidence_hints": ["The upload and post forms: is there a declaration field", "The post model: is the declaration stored", "A detector or provenance check on upload", "How a declared or detected item is rendered"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf"
+    },
+    {
+      "id": "IT-4-4", "instrument": "IT-RULES", "clause": "Rule 4(4)", "applies_to": ["ssmi"],
+      "obligation": "Deploy appropriate technical measures, including automated tools, to proactively identify depictions of rape or child sexual abuse and copies of information already removed under rule 3(1)(d), show a notice to users who try to access it, keep human oversight, and review the tools periodically for accuracy, fairness, bias and privacy impact.",
+      "deadline": "Always",
+      "evidence_hints": ["Hash matching or classifier services on upload", "A review record for the automated tools"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
+      "note": "Was 'endeavour to deploy' before 20 February 2026."
+    },
+    {
+      "id": "IT-4-5", "instrument": "IT-RULES", "clause": "Rule 4(5)", "applies_to": ["ssmi"],
+      "obligation": "Have a physical contact address in India, published on the website, the app or both, for receiving communications.",
+      "deadline": "Always",
+      "evidence_hints": ["Contact, legal and grievance pages", "An address outside India, or a registered office that is not offered as a contact address"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-4-6", "instrument": "IT-RULES", "clause": "Rule 4(6)", "applies_to": ["ssmi"],
+      "obligation": "Run a complaint mechanism that gives every complaint or grievance a unique ticket number so the complainant can track it, and, to the extent reasonable, give the complainant reasons for any action taken or not taken.",
+      "deadline": "Always",
+      "evidence_hints": ["Ticket number generation on intake", "A status page or status endpoint", "Closure templates: do they carry reasons"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+    },
+    {
+      "id": "IT-4-8", "instrument": "IT-RULES", "clause": "Rule 4(8)", "applies_to": ["ssmi"],
+      "obligation": "Where the intermediary removes or disables information under rule 3(1)(b) on its own accord: (a) notify the user beforehand with the action and the reasons; (b) give the user an adequate and reasonable opportunity to dispute it and ask for reinstatement; (c) have the Resident Grievance Officer oversee that dispute mechanism.",
+      "deadline": "Notice before removal; dispute decided within a reasonable time",
+      "evidence_hints": ["Moderation code paths that remove content without a notification call", "An appeal or reinstatement route for the uploader"],
+      "default_severity": "medium", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf"
+    },
+    {
+      "id": "EC-4-2", "instrument": "ECOM-RULES", "clause": "Rule 4(2)", "applies_to": ["ecom"],
+      "obligation": "Display prominently, in a clear and accessible manner: the legal name of the entity, the address of its headquarters and branches, its website, and contact details such as email, landline and mobile numbers of customer care and of the grievance officer.",
+      "deadline": "Always",
+      "evidence_hints": ["Footer, contact and about pages", "The seller or company information block at checkout"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf",
+      "note": "The sub-clause letters did not survive text extraction from the gazette PDF, so cite Rule 4(2) without a letter."
+    },
+    {
+      "id": "EC-4-4", "instrument": "ECOM-RULES", "clause": "Rule 4(4)", "applies_to": ["ecom"],
+      "obligation": "Establish a grievance redressal mechanism adequate to the number of grievances ordinarily received from India, appoint a grievance officer for consumer grievances, and display that officer's name, contact details and designation on the platform.",
+      "deadline": "Always",
+      "evidence_hints": ["A grievance page naming the officer with a designation", "A generic support address with no named officer", "A complaint intake route"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-4-5", "instrument": "ECOM-RULES", "clause": "Rule 4(5)", "applies_to": ["ecom"],
+      "obligation": "Ensure the grievance officer acknowledges every consumer complaint and redresses it.",
+      "deadline": "Acknowledge within 48 hours; redress within one month of receipt",
+      "evidence_hints": ["Acknowledgement automation", "SLA constants for consumer complaints", "Escalation before the one-month mark"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-5-3-b", "instrument": "ECOM-RULES", "clause": "Rule 5(3)(b)", "applies_to": ["ecom-marketplace"],
+      "obligation": "A marketplace gives a ticket number for each complaint lodged, through which the consumer can track its status.",
+      "deadline": "Always",
+      "evidence_hints": ["Ticket number generation", "A complaint status page"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-5-3-c", "instrument": "ECOM-RULES", "clause": "Rule 5(3)(c)", "applies_to": ["ecom-marketplace"],
+      "obligation": "A marketplace displays prominently information on return, refund, exchange, warranty, delivery, payment and the grievance redressal mechanism.",
+      "deadline": "Always",
+      "evidence_hints": ["Help and policy pages linked from product and checkout pages"],
+      "default_severity": "low", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-7-1-a", "instrument": "ECOM-RULES", "clause": "Rule 7(1)(a)", "applies_to": ["ecom-inventory"],
+      "obligation": "An inventory entity displays prominently accurate information on return, refund, exchange, warranty, delivery, payment and the grievance redressal mechanism.",
+      "deadline": "Always",
+      "evidence_hints": ["Help and policy pages linked from product and checkout pages"],
+      "default_severity": "low", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-7-1-f", "instrument": "ECOM-RULES", "clause": "Rule 7(1)(f)", "applies_to": ["ecom-inventory"],
+      "obligation": "An inventory entity gives a ticket number for each complaint lodged, through which the consumer can track its status.",
+      "deadline": "Always",
+      "evidence_hints": ["Ticket number generation", "A complaint status page"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    }
+  ]
+}

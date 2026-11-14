@@ -1,0 +1,13 @@
+{
+  "name": "prathikcannotcode",
+  "owner": {
+    "name": "nodal contributors"
+  },
+  "plugins": [
+    {
+      "name": "nodal",
+      "source": "./",
+      "description": "India IT Rules 2021 intermediary due diligence skills for Claude Code"
+    }
+  ]
+}

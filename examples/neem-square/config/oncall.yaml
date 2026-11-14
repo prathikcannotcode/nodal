@@ -1,0 +1,30 @@
+# Paging rotas. Times are IST.
+rotations:
+  safety-priority:
+    coverage: 24x7
+    members: [safety-apac, safety-emea, safety-amer]
+    page_via: pager
+
+  safety:
+    coverage: 24x7
+    members: [safety-apac, safety-emea, safety-amer]
+    page_via: queue
+
+  lea-liaison:
+    coverage: 24x7
+    members: [tns-ops-primary, tns-ops-secondary]
+    page_via: pager
+
+  legal-orders:
+    coverage:
+      days: [mon, tue, wed, thu, fri]
+      hours: "10:00-18:00"
+    members: [legal-counsel-1, legal-counsel-2]
+    page_via: email
+    inbox: legal@neemsquare.example
+
+  support:
+    coverage:
+      days: [mon, tue, wed, thu, fri, sat]
+      hours: "09:00-21:00"
+    page_via: queue

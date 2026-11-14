@@ -1,0 +1,9 @@
+Subject: We have your report ({{ ticket.number }})
+
+Hello,
+
+We received your report on {{ ticket.received_at | ist }}. Your ticket number is {{ ticket.number }}.
+
+You can check its status any time at https://neemsquare.example/help/report/status with that number. Reply to this email if you want to add anything.
+
+Neem Square Grievance Team

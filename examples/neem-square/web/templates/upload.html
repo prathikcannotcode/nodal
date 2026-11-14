@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>New post</h1>
+<form method="post" action="/api/posts" enctype="multipart/form-data">
+  <label>Photo <input type="file" name="media" accept="image/*"></label>
+  <label>Caption <textarea name="caption" maxlength="2200"></textarea></label>
+  <label>Who can see this
+    <select name="audience">
+      <option value="public">Everyone</option>
+      <option value="followers">Followers</option>
+    </select>
+  </label>
+  <label><input type="checkbox" name="allow_comments" checked> Allow comments</label>
+  <button type="submit">Post</button>
+</form>
+{% endblock %}

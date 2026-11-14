@@ -1,0 +1,29 @@
+name: Regulatory change
+description: A law, rule, order, judgment or guidance that the rule catalog or skills should reflect
+labels: [regulatory]
+body:
+  - type: input
+    id: instrument
+    attributes:
+      label: Instrument
+      description: Name and number, e.g. "IT (Intermediary Guidelines) Second Amendment Rules, 2026, G.S.R. ___(E)"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source
+      description: Gazette of India (egazette.gov.in) or the Ministry's site. Secondary commentary is welcome as extra context but not as the only source.
+    validations:
+      required: true
+  - type: input
+    id: effective
+    attributes:
+      label: Effective date
+  - type: textarea
+    id: change
+    attributes:
+      label: What changed
+      description: Which clause, and which skills or catalogs it affects (a rule id in catalog/rules.json, e.g. IT-3-2-b)
+    validations:
+      required: true

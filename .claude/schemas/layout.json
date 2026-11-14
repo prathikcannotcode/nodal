@@ -1,0 +1,24 @@
+{
+  "title": "nodal workspace layout",
+  "description": "Every path an agent may write, with the schema each JSON file must satisfy. `*` matches one path segment, `**` matches any depth. First match wins, so specific rules come first. The write-guard and validate scripts both read this file. catalog/, .claude/scripts, .claude/schemas and settings are left out on purpose: the validator trusts them, so a human changes them by hand.",
+  "paths": [
+    { "pattern": "company-profile/*/classification.json", "schema": "classification.schema.json", "description": "Stored answer of /classify: which duties apply to this product" },
+    { "pattern": "company-profile/.gitkeep", "description": "Keeps the empty directory in git" },
+    { "pattern": "assessments/*/report.json", "schema": "report.schema.json", "description": "Audit findings for one assessment" },
+    { "pattern": "assessments/*/**", "description": "Summaries, drafts from /draft and other assessment artefacts" },
+    { "pattern": "examples/*/report.json", "schema": "report.schema.json", "description": "The report of a scored run, held to the same schema as a live one" },
+    { "pattern": "examples/**", "description": "Synthetic apps to audit, their answer keys and scored runs" },
+    { "pattern": ".claude/skills/**", "description": "Skills. Hooks, schemas, settings and the rule catalog are left out on purpose: agents must not edit their own guards" },
+    { "pattern": ".github/**", "description": "CI workflows and issue templates" },
+    { "pattern": "docs/**", "description": "Documentation and images" },
+    { "pattern": "README.md" },
+    { "pattern": "CLAUDE.md" },
+    { "pattern": "AGENTS.md" },
+    { "pattern": "CONTRIBUTING.md" },
+    { "pattern": "SECURITY.md" },
+    { "pattern": "CHANGELOG.md" },
+    { "pattern": "LICENSE" },
+    { "pattern": ".gitignore" },
+    { "pattern": ".gitattributes" }
+  ]
+}

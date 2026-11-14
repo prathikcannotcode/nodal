@@ -1,0 +1,44 @@
+{
+  "company_id": "neem-square",
+  "classified_at": "2026-11-14T20:45:00+05:30",
+  "tags": ["intermediary", "smi", "ssmi", "sgi"],
+  "registered_users_india": 6200000,
+  "answers": [
+    {
+      "question": "Does the product host, store or transmit content that users create or send?",
+      "answer": "Yes. POST /api/posts takes a user's photo and caption, stores the renditions and inserts a live post. The README describes people posting text and images.",
+      "basis": "code",
+      "file": "api/posts.py"
+    },
+    {
+      "question": "Is its main job to let two or more users interact and share content with each other?",
+      "answer": "Yes. The home page is a feed of other users' posts, the post form has a followers audience and a comments switch, and the account purge job deletes follow records. The README calls it a social app where people follow each other, comment and share.",
+      "basis": "code",
+      "file": "web/templates/home.html"
+    },
+    {
+      "question": "Does it have 50 lakh (5 million) or more registered users in India?",
+      "answer": "Yes on the README's figure: about 62 lakh registered users in India as of September 2026, which is above the 50 lakh threshold. Nobody from the company confirmed the figure in this run.",
+      "basis": "code",
+      "file": "README.md"
+    },
+    {
+      "question": "Can users create, edit or share AI-generated audio, images or video with it?",
+      "answer": "Yes. Imagine generates images from a prompt and edits an uploaded photo (restyle, swap a background, change what someone is wearing or doing), and the result can be posted to the feed. That is beyond the routine-editing carve-out. Images only; no audio or video path was seen.",
+      "basis": "code",
+      "file": "services/imagine/generate.py"
+    },
+    {
+      "question": "Does it sell goods or services online, or let others sell on it?",
+      "answer": "No. The README says Neem Square sells nothing and is funded by advertising. The footer's Merch link goes out to a print shop on another domain, and the repo has no cart, checkout, order or seller code or tables. A link out to someone else's shop is not e-commerce, so no ecom tag.",
+      "basis": "code",
+      "file": "web/templates/footer.html"
+    }
+  ],
+  "unknowns": [
+    "Nobody was available to answer the five questions. Every answer comes from the app's README.md and code; none comes from the company.",
+    "Registered users in India: the README says 'about 62 lakh' as of September 2026. The stored 6200000 is that approximate figure, not a count the company confirmed. The ssmi tag rests on it.",
+    "Whether Neem Square is an intermediary in law for everything on it was not settled. Imagine output is made by the platform's own model at a user's prompt; the classification records what the README and code show and leaves the legal question to counsel.",
+    "Who owns and runs the Merch print shop: the README says a third party does. The code shows only an outbound link, so the absence of an ecom tag rests on the README."
+  ]
+}

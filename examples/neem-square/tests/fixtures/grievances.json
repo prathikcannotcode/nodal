@@ -1,0 +1,26 @@
+[
+  {
+    "number": "NS-2026-0000041",
+    "category": "impersonation",
+    "content_url": "https://neemsquare.example/p/8841207",
+    "details": "This account is using my photos and my name, Ishita Barua, to message my colleagues.",
+    "reply_to": "ishita.barua@mail.example.test",
+    "on_behalf": false
+  },
+  {
+    "number": "NS-2026-0000042",
+    "category": "intimate_imagery",
+    "content_url": "https://neemsquare.example/p/8841993",
+    "details": "Reporting for my sister Kaveri Nambiar. The picture was edited from her profile photo.",
+    "reply_to": "rohan.nambiar@mail.example.test",
+    "on_behalf": true
+  },
+  {
+    "number": "NS-2026-0000043",
+    "category": "content_removal",
+    "content_url": "https://neemsquare.example/p/8842310",
+    "details": "Gambling promotion with a referral link.",
+    "reply_to": "tsering.dolma@mail.example.test",
+    "on_behalf": false
+  }
+]

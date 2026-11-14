@@ -1,0 +1,17 @@
+{
+  "name": "nodal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source agent that checks a product against India's intermediary due diligence rules: 11 Claude Code skills, a gazette-checked rule catalog, JSON Schemas and write-guard hooks",
+  "license": "Apache-2.0",
+  "keywords": ["it-rules", "intermediary", "grievance-officer", "safe-harbour", "compliance", "claude-code", "india", "agent"],
+  "scripts": {
+    "validate": "node .claude/scripts/validate.mjs",
+    "audit": "node .claude/scripts/validate.mjs --strict",
+    "test": "node --test .claude/scripts/tests/*.test.mjs",
+    "export:sarif": "node .claude/scripts/export-sarif.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

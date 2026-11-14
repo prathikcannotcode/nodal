@@ -1,0 +1,18 @@
+# Feature flags. Read through services.flags.get().
+imagine:
+  enabled: true
+  daily_limit: 40
+  modes: [text_to_image, image_to_image]
+  label:
+    text: "AI-generated"
+    position: bottom-left
+    burn_in: true
+
+creators:
+  verified_badge: true
+  scheduling: true
+  clean_export: true     # verified creators can post Imagine images without the corner mark
+
+feed:
+  ranking: v7
+  comments: true

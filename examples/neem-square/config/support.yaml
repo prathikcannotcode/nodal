@@ -1,0 +1,16 @@
+# Grievance and report handling. Read by services/grievance/intake.py.
+grievance:
+  ticket_prefix: NS
+  ack_hours: 24
+  resolve_days: 15
+  content_removal_hours: 72
+  escalate_before_due_hours: 12
+
+queues:
+  intimate_imagery: safety-priority
+  impersonation: safety-priority
+  synthetic_media: safety
+  content_removal: safety
+  copyright: legal
+  account: support
+  other: support

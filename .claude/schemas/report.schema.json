@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assessment Report",
+  "description": "assessments/{assessment_id}/report.json: the findings of one audit run",
+  "type": "object",
+  "required": ["assessment_id", "company_id", "scope", "classification_tags", "started_at", "findings", "not_checked", "disclaimer"],
+  "properties": {
+    "assessment_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "company_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "scope": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["IT-RULES", "ECOM-RULES"] } },
+    "classification_tags": { "type": "array", "description": "Copied from company-profile/{id}/classification.json, so the report shows which duties were treated as applying", "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory"] } },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "assessor": { "type": "string", "description": "Who or what ran the audit, e.g. 'nodal on Claude Code'" },
+    "target": {
+      "type": "object",
+      "description": "What was audited, so a reader can check the findings against the same material",
+      "required": ["repo"],
+      "properties": {
+        "repo": { "type": "string", "description": "Repository name or URL" },
+        "commit": { "type": "string", "description": "Commit SHA, if it is a git repository" },
+        "site": { "type": "string", "pattern": "^https?://[^\\s?#]+$", "description": "Public site checked, if any" }
+      },
+      "additionalProperties": false
+    },
+    "model": { "type": "string", "description": "Model that ran the audit" },
+    "nodal_version": { "type": "string", "description": "The version in package.json" },
+    "law_as_at": { "type": "string", "format": "date", "description": "last_verified from catalog/rules.json" },
+    "coverage": {
+      "type": "object",
+      "required": ["applicable", "examined"],
+      "properties": {
+        "applicable": { "type": "integer", "minimum": 0, "description": "Catalog rules whose applies_to matches the classification" },
+        "examined": { "type": "integer", "minimum": 0, "description": "Catalog rules the audit actually examined" }
+      },
+      "additionalProperties": false
+    },
+    "findings": { "type": "array", "items": { "$ref": "finding.schema.json" } },
+    "not_checked": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "What this run did not check: out-of-scope instruments, catalog rules skipped, live site not fetched" },
+    "disclaimer": { "type": "string", "minLength": 1, "description": "The not-legal-advice line" }
+  },
+  "additionalProperties": false
+}

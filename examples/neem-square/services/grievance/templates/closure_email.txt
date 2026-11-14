@@ -1,0 +1,13 @@
+Subject: Our decision on your report ({{ ticket.number }})
+
+Hello,
+
+We have looked into your report {{ ticket.number }}.
+
+Decision: {{ ticket.decision }}
+
+Why: {{ reasons }}
+
+If you disagree with this decision, you can appeal to the Grievance Appellate Committee at https://gac.gov.in within 30 days of receiving this email.
+
+Neem Square Grievance Team

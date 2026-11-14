@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compliance Finding",
+  "type": "object",
+  "required": ["id", "severity", "framework", "clause", "issue", "recommendation"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^F-[0-9]{4,}$" },
+    "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+    "framework": { "type": "string", "enum": ["IT-RULES", "ECOM-RULES"], "description": "IT-RULES: IT (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, Part II. ECOM-RULES: Consumer Protection (E-Commerce) Rules, 2020." },
+    "clause": { "type": "string", "minLength": 1, "description": "References in this finding's framework, separated by commas, e.g. 'Rule 3(2)(a)(i), Rule 4(1)(c)'. Validation rejects a reference that is not a clause in catalog/rules.json, or a sub-clause of one." },
+    "cross_reference": { "type": "string", "description": "Any other instrument the gap touches, e.g. 'DPDP s.8(7): see Vigil'. Free text; nothing validates it." },
+    "issue": { "type": "string", "minLength": 1 },
+    "recommendation": { "type": "string", "minLength": 1 },
+    "file": { "type": "string", "pattern": "^(?![A-Za-z]:|[\\\\/]|\\.\\./)", "description": "Source file path relative to the audited codebase's root. Never absolute. Leave it out for a missing artefact." },
+    "line": { "type": "integer", "minimum": 1 },
+    "url": { "type": "string", "pattern": "^https?://[^\\s?#]+$", "description": "Public page the finding was seen on, for live-site checks. No query string or fragment." },
+    "owner": { "type": "string", "description": "Accountable role, e.g. 'Grievance Officer', 'Engineering Lead'" },
+    "due_date": { "type": "string", "format": "date" },
+    "status": { "type": "string", "enum": ["open", "in_progress", "remediated", "accepted", "disputed"], "default": "open" },
+    "found_at": { "type": "string", "format": "date-time" },
+    "remediated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

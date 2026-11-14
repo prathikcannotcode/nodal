@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Bash(npm run validate)",
+      "Bash(npm run validate -- --strict)",
+      "Bash(npm run audit)",
+      "Bash(npm test)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"${CLAUDE_PROJECT_DIR}/.claude/scripts/write-guard.mjs\"; [ -f \"$f\" ] || f=.claude/scripts/write-guard.mjs; node \"$f\"",
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"${CLAUDE_PROJECT_DIR}/.claude/scripts/validate-on-write.mjs\"; [ -f \"$f\" ] || f=.claude/scripts/validate-on-write.mjs; node \"$f\""
+          }
+        ]
+      }
+    ]
+  }
+}
