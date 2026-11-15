@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 (15 November 2026)
 
 ### Catalog
 - G.S.R. 775(E) of 22 October 2025 is read and marked `read: true`, from the gazette PDF. `IT-3-1-d` now sets out when a takedown intimation gives actual knowledge under rule 3(1)(d): a court order, or a reasoned written intimation from an officer authorised in writing, not below Joint Secretary (Deputy Inspector General for the police), that names the legal basis, the unlawful act and the specific URL. Intimations are reviewed monthly by a Secretary-level officer.
