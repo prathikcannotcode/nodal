@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased
+
+### Catalog
+- G.S.R. 775(E) of 22 October 2025 is read and marked `read: true`, from the gazette PDF. `IT-3-1-d` now sets out when a takedown intimation gives actual knowledge under rule 3(1)(d): a court order, or a reasoned written intimation from an officer authorised in writing, not below Joint Secretary (Deputy Inspector General for the police), that names the legal basis, the unlawful act and the specific URL. Intimations are reviewed monthly by a Secretary-level officer.
+- The rule does not say what an intermediary should do with an intimation that falls short. The catalog note leaves that to counsel.
+- One notification remains unread: G.S.R. 328(E) of 17 May 2021.
+
+### Skills
+- `/takedown` checks that the orders runbook has a step that reads an intimation against those conditions.
+- `/draft` writes that step into the takedown runbook as a checklist.
+- Reports no longer list rule 3(1)(d) as partly unconfirmed. They list instead that nodal does not judge whether any actual order is valid.
+
+### Measured
+- `/takedown` changed after run 1 on `examples/neem-square` was scored, so a later run on that app is not blind for this skill. Run 1's files are unchanged and still describe the catalog as it was on 14 November 2026.
+
 ## 0.1.0 (15 November 2026)
 
 First public release.

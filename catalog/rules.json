@@ -1,5 +1,5 @@
 {
-  "last_verified": "2026-11-14",
+  "last_verified": "2026-11-15",
   "instruments": [
     {
       "code": "IT-RULES",
@@ -9,7 +9,7 @@
         { "number": "S.O. 942(E)", "date": "2021-02-25", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2021/225497.pdf", "note": "Sets fifty lakh registered users in India as the significant social media intermediary threshold under rule 2(1)(v)." },
         { "number": "G.S.R. 794(E)", "date": "2022-10-28", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf", "note": "Substituted rule 3(1)(a), (b), (f) and 3(2)(a)(i); inserted 3(1)(m), (n) and rule 3A." },
         { "number": "G.S.R. 275(E)", "date": "2023-04-06", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf", "note": "Online gaming and fact-check amendments; renumbered 3(1)(b) to sub-clauses (i)-(xi); added the 'prominently publish' Explanation to rule 3(2)." },
-        { "number": "G.S.R. 775(E)", "date": "2025-10-22", "read": false, "note": "NOT READ. Secondary sources say it substituted rule 3(1)(d): who may issue a takedown intimation and what it must contain. G.S.R. 120(E) amends the clause as it stood after this notification, so the three-hour clock is confirmed but the rest of 3(1)(d) is not." },
+        { "number": "G.S.R. 775(E)", "date": "2025-10-22", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2025/267089.pdf", "note": "In force 15 November 2025. Substituted rule 3(1)(d): actual knowledge arises only by a court order or a reasoned written intimation from an authorised senior officer, and intimations are reviewed every month by a Secretary-level officer." },
         { "number": "G.S.R. 120(E)", "date": "2026-02-10", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf", "note": "In force 20 February 2026. Synthetically generated information, and the shorter clocks in rule 3(1)(c), 3(1)(d), 3(2)(a)(i) and 3(2)(b)." }
       ]
     },
@@ -62,11 +62,11 @@
     },
     {
       "id": "IT-3-1-d", "instrument": "IT-RULES", "clause": "Rule 3(1)(d)", "applies_to": ["intermediary"],
-      "obligation": "On actual knowledge through a court order, or an intimation from an officer the Appropriate Government has authorised in writing, remove or disable access to the unlawful information.",
-      "deadline": "Within 3 hours of receiving the order or intimation",
-      "evidence_hints": ["An admin action that disables content by URL or ID", "A runbook for court orders and government intimations", "An on-call route that is staffed outside office hours", "An audit log of who disabled what and when", "SLA constants still set to 36 hours"],
+      "obligation": "On actual knowledge that information on its computer resource is used to commit an unlawful act prohibited by law (in relation to the sovereignty and integrity of India, the security of the State, friendly relations with foreign States, public order, decency or morality, contempt of court, defamation, incitement to these, or any other information prohibited by law), remove or disable access to it. Actual knowledge arises only: (i) by an order of a court of competent jurisdiction; or (ii) by a reasoned intimation in writing that (I) is issued by an officer whom the Appropriate Government or its agency has authorised by order in writing, not below the rank of Joint Secretary or equivalent, or a Director or equivalent where no such rank is appointed, and, for the police, by an officer not below Deputy Inspector General who is specially authorised; and (II) clearly specifies the legal basis and statutory provision invoked, the nature of the unlawful act, and the specific URL, identifier or other electronic location to be removed. An officer not below Secretary reviews such intimations once every month.",
+      "deadline": "Within 3 hours of receiving the actual knowledge: the court order or the intimation",
+      "evidence_hints": ["An admin action that disables content by URL or ID", "A runbook for court orders and government intimations", "A runbook step that reads an intimation against the rule's conditions: written, reasoned, the issuing officer's rank and written authorisation, the legal basis, the specific URL", "An on-call route that is staffed outside office hours", "An audit log of who disabled what and when", "SLA constants still set to 36 hours"],
       "default_severity": "critical", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
-      "note": "Was 36 hours before 20 February 2026. G.S.R. 775(E), which rewrote the rest of this clause in 2025, was not read: who may issue an intimation and what it must contain are unconfirmed here. For police, G.S.R. 120(E) requires an officer not below Deputy Inspector General."
+      "note": "Was 36 hours before 20 February 2026. G.S.R. 775(E) substituted the clause from 15 November 2025; G.S.R. 120(E) then changed the clock, added 'by order in writing' and allowed more than one authorised police officer. The rule does not say what an intermediary should do with an intimation that falls short of these conditions, and the three hours leave little time to ask: that is a question for counsel."
     },
     {
       "id": "IT-3-1-f", "instrument": "IT-RULES", "clause": "Rule 3(1)(f)", "applies_to": ["intermediary"],
