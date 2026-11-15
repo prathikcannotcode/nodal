@@ -4,9 +4,19 @@
   "version": "0.1.0",
   "description": "India IT Rules 2021 intermediary due diligence skills for Claude Code: grievance officer, takedown clocks, terms, AI-generated media and SSMI duties, each finding citing the clause. Skills only; the write guards, catalog check and exporter need a nodal workspace.",
   "author": {
-    "name": "nodal contributors"
+    "name": "nodal contributors",
+    "url": "https://github.com/prathikcannotcode/nodal"
   },
+  "homepage": "https://github.com/prathikcannotcode/nodal#readme",
+  "repository": "https://github.com/prathikcannotcode/nodal",
   "license": "Apache-2.0",
-  "keywords": ["it-rules", "intermediary", "grievance-officer", "safe-harbour", "compliance", "india"],
+  "keywords": [
+    "it-rules",
+    "intermediary",
+    "grievance-officer",
+    "safe-harbour",
+    "compliance",
+    "india"
+  ],
   "skills": "./.claude/skills/"
 }
