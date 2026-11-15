@@ -1,7 +1,8 @@
 {
-  "name": "prathikcannotcode",
+  "name": "nodal",
   "owner": {
-    "name": "nodal contributors"
+    "name": "nodal contributors",
+    "url": "https://github.com/prathikcannotcode/nodal"
   },
   "plugins": [
     {

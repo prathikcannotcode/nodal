@@ -2,7 +2,15 @@
 
 **An open-source agent that reads your product and reports where it falls short of India's intermediary due diligence rules.** Eleven Claude Code skills, one rule catalog checked against the gazette, and findings that cite the clause, the file and the fix.
 
-Sibling to Vigil, which does the same job for the DPDP Act and the GDPR.
+[![CI](https://github.com/prathikcannotcode/nodal/actions/workflows/ci.yml/badge.svg)](https://github.com/prathikcannotcode/nodal/actions/workflows/ci.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-0F1317)](LICENSE)
+![IT Rules 2021, as amended to February 2026](https://img.shields.io/badge/IT%20Rules%202021-amended%20to%20Feb%202026-f0a63a)
+![11 Claude Code skills](https://img.shields.io/badge/Claude%20Code-11%20skills-0F1317)
+![Zero dependencies](https://img.shields.io/badge/dependencies-0-0F1317)
+
+[Quick start](#quick-start) · [What a run gives you](#what-a-run-gives-you) · [Accuracy](#how-accurate-is-it) · [Skills](#skills) · [The catalog](#the-catalog-and-what-verified-means) · [Guardrails](#guardrails) · [Contribute](CONTRIBUTING.md)
+
+Sibling to [Vigil](https://github.com/prathikcannotcode/Vigil), which does the same job for the DPDP Act and the GDPR.
 
 ## Why now
 
@@ -52,23 +60,51 @@ Treat that as a floor test, not a benchmark. The same author wrote the skills an
 
 ## Quick start
 
-Needs Node 22+ and Claude Code. No `npm install`.
+You need [Node.js 22+](https://nodejs.org) and [Claude Code](https://claude.com/claude-code). There is nothing to `npm install`. On Windows, install [Git for Windows](https://git-scm.com/download/win) too: the hooks run in Git Bash, and without it every write is blocked.
+
+1. **Clone and check the workspace.**
+   ```bash
+   git clone https://github.com/prathikcannotcode/nodal.git
+   cd nodal
+   npm run validate -- --strict
+   ```
+   It should end with `0 error(s)`.
+2. **Open Claude Code in the repo.**
+   ```bash
+   claude
+   ```
+3. **Add your product's code.** Type `/add-dir ../your-app`. nodal reads it and never edits it.
+4. **Classify.** Type `/classify`. It asks five questions, confirms what it can from the code, and stores the answer in `company-profile/<id>/classification.json`. Every check reads that file.
+5. **Audit.** Type `/audit`, or `/audit https://your-site.example` to check the published pages too. The report and summary land in `assessments/<id>/`.
+6. **Take the output further.** `/draft` writes the Grievance Officer page, the acknowledgement template and the takedown runbook into the same folder. For GitHub code scanning:
+   ```bash
+   npm run export:sarif -- --company <id> --output findings.sarif
+   ```
+   Upload `findings.sarif` with [`github/codeql-action/upload-sarif`](https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/uploading-a-sarif-file-to-github) from the audited repository. A finding with no file, such as a missing runbook, stays in `report.json`; the exporter names what it left out.
+
+Your classifications and assessments are gitignored, so a public fork does not publish your gaps.
+
+### Try it on the synthetic app first
+
+Copy the app out of the repo, so the run cannot read the answer list, then add it like any other codebase and use company id `neem-square`:
 
 ```bash
-npm run validate -- --strict
+cp -r examples/neem-square ../neem-square
+```
+
+Answer `/classify` from the company facts in the app's README. Afterwards, compare your report with [the answer list](examples/neem-square.expected.json).
+
+### Or install the skills as a plugin
+
+```bash
+claude plugin marketplace add prathikcannotcode/nodal
 ```
 
 ```bash
-npm test
+claude plugin install nodal@nodal
 ```
 
-Then open Claude Code in this folder, add the product's repo with `/add-dir`, and run:
-
-1. `/classify`: five questions, confirmed from the code where possible. The answer is stored and every check reads it.
-2. `/audit`, or `/audit https://your-site.example` to check the published pages too.
-3. `/draft` and `/export` if you want the drafts and the SARIF file.
-
-To try it on something safe first, audit [`examples/neem-square`](examples/neem-square), a small synthetic social platform with an AI image generator. Do not open [its answer key](examples/neem-square.expected.json) before you run it.
+The plugin carries the eleven skills, namespaced as `/nodal:audit`, `/nodal:classify` and so on. It carries no hooks, no catalog and no validator: the skills read `catalog/rules.json` and the schemas from a nodal workspace, so clone the repo to run an audit. The plugin is useful for looking things up from another project once you have a clone.
 
 ## Skills
 
@@ -118,7 +154,7 @@ Two things in the starting brief turned out differently in the gazette. The thre
 
 ## Not checked
 
-DPDP (use Vigil). Part III of the IT Rules on digital media publishers. The online gaming provisions. Rule 3(1)(i), (k), (l), (m) and (n). Rule 4(2), 4(3) and 4(7). The E-Commerce Rules beyond grievance duties. RBI, SEBI, IRDAI, TRAI and other sector rules. Anything notified after 10 February 2026. Every report repeats this list.
+DPDP (use [Vigil](https://github.com/prathikcannotcode/Vigil)). Part III of the IT Rules on digital media publishers. The online gaming provisions. Rule 3(1)(i), (k), (l), (m) and (n). Rule 4(2), 4(3) and 4(7). The E-Commerce Rules beyond grievance duties. RBI, SEBI, IRDAI, TRAI and other sector rules. Anything notified after 10 February 2026. Every report repeats this list.
 
 One overlap nodal reports and does not resolve: rules 3(1)(g) and 3(1)(h) require keeping some data for 180 days that the DPDP Act may require you to erase sooner. A finding there names the tension and sends you to Vigil and to counsel.
 

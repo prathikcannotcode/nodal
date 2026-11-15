@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Report security issues privately through the repository's GitHub security advisories. Do not open a public issue. Include what you found, how to reproduce it, and the impact.
+Report security issues privately through [GitHub security advisories](https://github.com/prathikcannotcode/nodal/security/advisories/new). Do not open a public issue. Include what you found, how to reproduce it, and the impact.
 
 ## In scope
 
