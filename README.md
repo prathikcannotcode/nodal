@@ -134,12 +134,14 @@ Each rule carries a `verified` flag. It is `true` only where the clause number a
 | S.O. 942(E), 25 Feb 2021: the 50 lakh threshold | Yes |
 | G.S.R. 794(E), 28 Oct 2022 | Yes |
 | G.S.R. 275(E), 6 Apr 2023 | Yes |
-| G.S.R. 775(E), 22 Oct 2025 | **No** |
+| G.S.R. 775(E), 22 Oct 2025 | Yes |
 | G.S.R. 120(E), 10 Feb 2026 | Yes |
 | G.S.R. 462(E), 23 Jul 2020: E-Commerce Rules | Yes |
 | G.S.R. 328(E), 17 May 2021: E-Commerce amendment | **No** |
 
-The two gaps matter in different ways. G.S.R. 775(E) rewrote rule 3(1)(d) in 2025. The 2026 notification amends that clause's clock to three hours, so the clock is confirmed, but who may issue a takedown intimation and what it must contain are not in the catalog. G.S.R. 328(E) is reported to touch only E-Commerce rule 4(1), which the catalog leaves out.
+The one gap is narrow. G.S.R. 328(E) is reported to touch only E-Commerce rule 4(1), on the nodal officer, and the catalog leaves that rule out.
+
+Rule 3(1)(d) deserves a second look by anyone who runs a takedown desk. Since November 2025 a government intimation counts only if it is in writing, gives reasons, comes from an authorised officer of at least Joint Secretary rank (a Director where that rank is not appointed; Deputy Inspector General for the police), and names the legal basis, the unlawful act and the specific URL. Since February 2026 the officer's authorisation must itself be by order in writing, and the clock is three hours. The rule does not say what a platform should do with an intimation that falls short, so nodal checks that your runbook reads each one against those conditions and leaves the rest to counsel.
 
 Two things in the starting brief turned out differently in the gazette. The three-monthly reminder is rule 3(1)(c); the separate yearly notice of the documents and their changes in rule 3(1)(f) was not amended. And the rules give users a 30-day window to appeal to the Grievance Appellate Committee, but nothing read requires a platform to tell users so. nodal reports a closure message that omits it as low severity and says why.
 
@@ -164,4 +166,4 @@ nodal is compliance tooling, not legal advice. It reports gaps visible in the ma
 
 ## Contributing and licence
 
-See [CONTRIBUTING.md](CONTRIBUTING.md); the most useful contribution is reading one of the two unread notifications. Apache 2.0, in [LICENSE](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md); the most useful contribution is a test app written by someone who has not read the skills. Apache 2.0, in [LICENSE](LICENSE).

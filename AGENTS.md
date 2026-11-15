@@ -54,7 +54,7 @@ Rule 3(1)(g) and 3(1)(h) require keeping removed content and registration data f
   - Online gaming provisions: rule 3(1)(b)(ix)-(x), rule 4(10)-(13), rules 4A to 4C
   - Rule 3(1)(i), (k), (l), (m), (n): security practices, CERT-In reporting, accessibility, constitutional rights
   - Rule 4(2) first originator, rule 4(3) advertised content, rule 4(7) voluntary verification
-  - The parts of rule 3(1)(d) other than the three-hour clock (G.S.R. 775(E) was not read when the catalog was built)
+  - Whether a particular court order or government intimation is valid under rule 3(1)(d): nodal checks that a process exists to read one against the rule, not any actual order
   - E-Commerce Rules beyond grievance duties
   - RBI, SEBI, IRDAI, TRAI and other sector rules
   - Any amendment notified after G.S.R. 120(E) of 10 February 2026

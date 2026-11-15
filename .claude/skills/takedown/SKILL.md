@@ -15,16 +15,17 @@ Check that the product can act inside the shortest clocks in the rules, and that
 
 ## Legal basis
 
-Catalog rules `IT-3-1-d`, `IT-3-2-b`, `IT-3-2-c`, `IT-3-1-g`, `IT-3-1-h`, `IT-3-1-j`. Read each `deadline` and `note` from `catalog/rules.json` first. `IT-3-1-d` has an unconfirmed part: say so in any finding that cites it.
+Catalog rules `IT-3-1-d`, `IT-3-2-b`, `IT-3-2-c`, `IT-3-1-g`, `IT-3-1-h`, `IT-3-1-j`. Read each `obligation`, `deadline` and `note` from `catalog/rules.json` first.
 
 ## Checks
 
 ### 1. Orders and intimations (`IT-3-1-d`)
 
-A clock measured in hours needs four things. Look for each:
+A clock measured in hours needs five things. Look for each:
 
 - **An admin action** that disables content by URL or ID, without a deploy.
 - **A runbook** for court orders and government intimations: who receives them, who decides, who presses the button.
+- **A step that reads the intimation against the rule.** The catalog obligation lists what makes an intimation count: in writing, with reasons, from an officer of the stated rank who is authorised in writing, naming the legal basis, the unlawful act and the specific URL or identifier. A runbook that acts on anything from any government address, or one that has no such step, is a finding at medium: the rule sets the conditions, and the catalog note says what to do with a defective intimation is for counsel. Do not say the company may ignore one.
 - **An on-call route** that is staffed when the order arrives. A legal inbox read on business days cannot meet a three-hour clock at 9 pm on a Saturday. Read the rota or paging config, not only the runbook's promise.
 - **An audit log** of who disabled what and when.
 

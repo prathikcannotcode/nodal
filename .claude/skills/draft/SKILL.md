@@ -42,7 +42,7 @@ Subject and body for the automatic acknowledgement: the ticket number, the date 
 
 - Scope: court orders and government intimations (`IT-3-1-d`), intimate or morphed imagery complaints (`IT-3-2-b`), government information requests (`IT-3-1-j`).
 - For each: where it arrives, who is on call (placeholder rota, staffed at all hours), the steps, the clock from the catalog with a target well inside it, and the escalation when the target is missed.
-- Checks on an intimation before acting. Say that the catalog has not confirmed who may issue one or what it must contain (see the note on `IT-3-1-d`), and leave that section for counsel.
+- Checks on an intimation before acting, as a short checklist taken from the obligation in `IT-3-1-d`: in writing, with reasons, the issuing officer's rank and written authorisation, the legal basis and statutory provision, the nature of the unlawful act, the specific URL or identifier. The clock runs while the check happens, so give it minutes, not hours. Leave a marked section for counsel on what to do when an intimation falls short: the rule does not say.
 - The disable action to use, and the audit log entry to write.
 - Preservation: what to keep and for how long (`IT-3-1-g`), and the pointer to Vigil for the DPDP overlap.
 - A drill: run the path out of hours once a quarter and record the time taken.
