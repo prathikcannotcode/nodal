@@ -15,7 +15,7 @@ description: "Look up the rule catalog: which clause carries a duty, what the cl
 
 ## What is in the file
 
-- `last_verified`: the date the entries were last checked. Reports copy it to `law_as_at`.
+- `last_verified`: the date the entries were last checked against the notifications marked read. It says nothing about later amendments. Reports take `law_as_at` from the date of the latest notification marked `read: true`, not from this field.
 - `instruments[].notifications[]`: the principal rules and each amendment, with `read: true` only if someone read that gazette text. An unread notification is a known hole.
 - `rules[]`: `id`, `instrument`, `clause`, `applies_to` (classification tags), `obligation`, `deadline`, `evidence_hints`, `default_severity`, `verified`, `source_url`, and a `note` where part of the rule is unconfirmed.
 

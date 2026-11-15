@@ -44,7 +44,7 @@ Find every job that deletes. For each, work out what it deletes and after how lo
 - Removed, hidden or moderated content and its associated records purged before the catalog period: finding under `IT-3-1-g`.
 - Registration data purged before the catalog period after account closure: finding under `IT-3-1-h`.
 - A hard delete at moderation time, with no retained copy, is the same gap with a period of zero.
-- These jobs often exist to honour erasure requests. Report the IT Rules gap, put the DPDP tension in `cross_reference` ("DPDP s.8(7) and s.12 erasure: see Vigil"), and do not say which duty wins.
+- These jobs often exist to honour erasure requests. Report the IT Rules gap and put the DPDP overlap in `cross_reference` ("DPDP s.8(7) and s.12(3) except retention needed to comply with a law: see Vigil"). Do not say what may be kept once the catalog period ends, or which records the rule reaches: that is for counsel.
 
 ### 4. Government information requests (`IT-3-1-j`)
 

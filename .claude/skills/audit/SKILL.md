@@ -46,14 +46,14 @@ All of "Findings" in `AGENTS.md`, and:
 
 ### `report.json`
 
-Per `.claude/schemas/report.schema.json`: `assessment_id`, `company_id`, `scope` (the frameworks checked), `classification_tags`, `started_at`, `completed_at`, `assessor`, `target` (repo, commit, and site if checked), `model`, `nodal_version` (from `package.json`), `law_as_at` (the catalog's `last_verified`), `coverage` (rules selected, rules examined), `findings`, `not_checked` and `disclaimer` (both from `AGENTS.md`).
+Per `.claude/schemas/report.schema.json`: `assessment_id`, `company_id`, `scope` (the frameworks checked), `classification_tags`, `started_at`, `completed_at`, `assessor`, `target` (repo, commit, and site if checked), `model`, `nodal_version` (from `package.json`), `law_as_at` (the latest `date` among the catalog notifications marked `read: true` for the instruments in `scope`; never `last_verified`, which is only the day the entries were checked), `coverage` (rules selected, rules examined), `findings`, `not_checked` and `disclaimer` (both from `AGENTS.md`).
 
 ### `summary.md`
 
-In this order:
+Open with one line: "Law as amended up to {law_as_at}. Catalog entries last checked {catalog last_verified}." Then, in this order:
 
 1. **Classification**: the tags, each with its basis, and any unknowns.
-2. **Findings by severity**: id, clause, one line, file or page.
+2. **Findings by severity**: id, clause, one line, file or page. When `scope` includes `IT-RULES`, state the consequence once above the list: under rule 7, an intermediary that fails to observe these rules loses the protection of section 79(1) of the IT Act and is liable under any law in force. Do not say that any one finding has that result; that is for counsel.
 3. **Every clock you are on**: a one-page table with one row per selected catalog rule that has a time limit. Columns: duty, clause, the clock, what the code or documents say today, finding id or "no gap found". Include the rows with no gap: this table is the page counsel pins to the wall.
 4. **Fix first**: up to five findings, ordered by how short the clock is and how complete the gap is. For each, the change and where to make it.
 5. **Unverified rules relied on**: any cited rule with `verified: false` or an unconfirmed part in its note.

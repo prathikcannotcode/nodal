@@ -27,7 +27,7 @@ This skill does not review the privacy policy's content. That is DPDP work: poin
 
 ### 2. The prohibited content clause (`IT-3-1-b`)
 
-The terms or guidelines must tell users not to post the categories in the catalog obligation. Map each sub-clause to a sentence in the document. Wording need not match the rule; the substance must be there. Report the missing categories in one finding, by sub-clause numeral. Sub-clauses (ix) and (x) concern online games: do not report their absence for a product with no games, and note that online gaming is not checked.
+The terms or guidelines must tell users not to post the categories in the catalog obligation. Map each sub-clause to a sentence in the document. Wording need not match the rule; the substance must be there. Report the missing categories in one finding, by sub-clause numeral. Sub-clauses (ix) and (x) concern online games: do not report their absence for a product with no games, and note that online gaming is not checked. Sub-clause (v) of the rule also prints a limb on information that a Central Government fact check unit identifies as false. The Bombay High Court struck that limb down in 2024 and an appeal is pending, so do not report its absence either.
 
 ### 3. The periodic reminder (`IT-3-1-c`)
 

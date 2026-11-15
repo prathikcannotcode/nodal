@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased
+
+### Skills
+- Reports take `law_as_at` from the latest notification marked read, not from the catalog's `last_verified`. `summary.md` and every draft print both dates.
+- `summary.md` states the rule 7 consequence once: failing to observe the rules removes section 79(1) protection.
+- `/classify` asks whether the Ministry has made a rule 6 order applying rule 4 below the threshold.
+- `/terms` no longer expects the fact check unit limb of rule 3(1)(b)(v), which the Bombay High Court struck down.
+- `/takedown` and `AGENTS.md` describe the DPDP overlap as the Act does: sections 8(7) and 12(3) except retention needed to comply with a law.
+
+### Not checked list
+- Adds blocking orders under section 69A and the draft Second Amendment of 30 March 2026.
+
+### Known, awaiting a catalog edit
+- `IT-4-1-a`, `IT-4-1-b` and `IT-4-1-c` give the deadline as three months from crossing the threshold. The rule counts three months from the notification of the threshold on 25 February 2021.
+- The corrigendum G.S.R. 148(E) of 26 February 2026 is not in the catalog, and `IT-3-1-c` carries the uncorrected third limb.
+- `IT-3-1-b` summarises sub-clauses (ii), (v) and (vii) with limbs left out.
+
 ## 0.1.1 (15 November 2026)
 
 ### Catalog

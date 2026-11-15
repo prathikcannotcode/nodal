@@ -11,7 +11,7 @@ description: "Check the extra duties of a significant social media intermediary 
 
 ## Purpose
 
-Check rule 4. Applies only to products tagged `ssmi`: a social media intermediary with registered users in India at or above the notified threshold. If the tag is absent, say so and stop. If `/classify` recorded the user count as unknown, say that rule 4 was not checked for that reason, and list it under `not_checked`.
+Check rule 4. Applies only to products tagged `ssmi`: a social media intermediary with registered users in India at or above the notified threshold, or an intermediary the Ministry has ordered under rule 6 to comply with rule 4. If the tag is absent, say so and stop. If `/classify` recorded the user count as unknown, say that rule 4 was not checked for that reason, and list it under `not_checked`.
 
 ## Legal basis
 
