@@ -25,7 +25,7 @@
     },
     "model": { "type": "string", "description": "Model that ran the audit" },
     "nodal_version": { "type": "string", "description": "The version in package.json" },
-    "law_as_at": { "type": "string", "format": "date", "description": "last_verified from catalog/rules.json" },
+    "law_as_at": { "type": "string", "format": "date", "description": "Date of the latest notification in catalog/rules.json marked read: true for the instruments in scope. Not last_verified, which is only when the entries were checked" },
     "coverage": {
       "type": "object",
       "required": ["applicable", "examined"],

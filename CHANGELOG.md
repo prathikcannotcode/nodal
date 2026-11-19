@@ -12,10 +12,15 @@
 ### Not checked list
 - Adds blocking orders under section 69A and the draft Second Amendment of 30 March 2026.
 
-### Known, awaiting a catalog edit
-- `IT-4-1-a`, `IT-4-1-b` and `IT-4-1-c` give the deadline as three months from crossing the threshold. The rule counts three months from the notification of the threshold on 25 February 2021.
-- The corrigendum G.S.R. 148(E) of 26 February 2026 is not in the catalog, and `IT-3-1-c` carries the uncorrected third limb.
-- `IT-3-1-b` summarises sub-clauses (ii), (v) and (vii) with limbs left out.
+### Catalog
+- `IT-4-1-a`, `IT-4-1-b` and `IT-4-1-c` no longer give three months from crossing the threshold. Rule 4(1) counts three months from the notification of the threshold on 25 February 2021, so an intermediary that crosses it today has no period. `IT-4-1-a` adds the Chief Compliance Officer's liability.
+- Adds the corrigendum G.S.R. 148(E) of 26 February 2026, marked unread. `IT-3-1-c` carries the corrected third limb and a note saying so.
+- `IT-3-1-b` restores the limbs of sub-clauses (ii), (v) and (vii) that its summary left out, and notes that the Bombay High Court struck down the fact check unit limb of (v).
+- `IT-3-1-g` and `IT-3-1-h` describe the DPDP overlap as sections 8(7) and 12(3) do.
+- These changes were read in the consolidated text hosted by MIB, updated to 10 February 2026, and not in the gazette PDFs.
+
+### Schemas
+- The `law_as_at` description matches the skills, and the `ssmi` tag description includes a rule 6 order.
 
 ## 0.1.1 (15 November 2026)
 
