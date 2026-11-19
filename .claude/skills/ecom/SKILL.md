@@ -11,13 +11,15 @@ description: "Check the grievance officer duties of the Consumer Protection (E-C
 
 ## Purpose
 
-Check the grievance duties of an e-commerce entity. Applies only to products tagged `ecom`. If the tag is absent, say so and stop: a product that sells nothing gets no finding under this framework.
+Check the grievance duties of an e-commerce entity, and of a seller on another company's marketplace. Applies only to products tagged `ecom` or `ecom-seller`. If both are absent, say so and stop: a product that sells nothing gets no finding under this framework.
+
+A seller on a marketplace is not an e-commerce entity, so checks 1 to 4 do not apply to a product tagged `ecom-seller` alone. Run check 5 for it.
 
 Only the grievance duties are in scope. Pricing, cancellation, seller duties, country of origin and the rest of the E-Commerce Rules are not checked; say so in `not_checked`.
 
 ## Legal basis
 
-Catalog rules `EC-4-2`, `EC-4-4`, `EC-4-5`, and by model `EC-5-3-b`, `EC-5-3-c` (marketplace) or `EC-7-1-a`, `EC-7-1-f` (inventory). Findings use `framework: "ECOM-RULES"`.
+Catalog rules `EC-4-2`, `EC-4-4`, `EC-4-5`, and by model `EC-5-3-b`, `EC-5-3-c`, `EC-5-3-seller` (marketplace) or `EC-7-1-a`, `EC-7-1-f` (inventory). For a seller on another company's marketplace, `EC-6-4-b` and `EC-6-5-e`. Findings use `framework: "ECOM-RULES"`.
 
 ## Checks
 
@@ -36,6 +38,16 @@ Each complaint gets a ticket number the consumer can use to track status. Cite t
 ### 4. Mechanism described (`EC-5-3-c` or `EC-7-1-a`)
 
 The help or policy pages say how to complain. Low severity.
+
+For a marketplace (`EC-5-3-seller`): the product or seller page shows each seller's grievance officer, with name, contact numbers and designation, and seller onboarding collects them. A marketplace that shows only its own officer is a finding.
+
+### 5. Selling through someone else's marketplace (`EC-6-4-b`, `EC-6-5-e`), only if tagged `ecom-seller`
+
+- The seller has its own grievance officer for consumer complaints, distinct from the marketplace's.
+- Complaints the marketplace forwards reach a monitored queue, with clocks at or under the catalog deadline: acknowledgement and redressal, counted from receipt.
+- The officer's name, contact numbers and designation go to the marketplace for display. Look in seller profile data, listing feeds or onboarding config.
+
+Most of this sits outside the repo. A missing officer or queue is "not found in the reviewed material", medium at most.
 
 ## An entity that is both
 

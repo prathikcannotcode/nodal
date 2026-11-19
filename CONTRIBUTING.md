@@ -17,7 +17,7 @@ No `npm install`. Everything runs on Node 22+ built-ins.
 
 | Area | Examples |
 |---|---|
-| The unread notification | G.S.R. 328(E) of 17 May 2021 (E-Commerce rule 4(1)). Read the gazette PDF, add the catalog entry, flip `read`. |
+| The unread notifications | G.S.R. 148(E) of 26 February 2026, the corrigendum to rule 3(1)(c)(iii) and 3(1)(ca), and G.S.R. 328(E) of 17 May 2021 (E-Commerce rule 4(1)). Read the gazette PDF, update the catalog entry, flip `read`. |
 | New amendments | Anything notified after 10 February 2026. Open a [regulatory change issue](https://github.com/prathikcannotcode/nodal/issues/new?template=regulatory-change.yml) with the gazette link. |
 | A second fixture | A synthetic app written by someone who has not read the skills. See "What this fixture cannot show" in the run sheet. |
 | Check depth | Android and iOS evidence (home screen links, in-app report flows), audio and video generation paths |

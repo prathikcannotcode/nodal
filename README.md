@@ -110,14 +110,14 @@ The plugin carries the eleven skills, namespaced as `/nodal:audit`, `/nodal:clas
 
 | Skill | What it does |
 |---|---|
-| `/classify` | Decides which duties apply: intermediary, social media intermediary, significant social media intermediary (50 lakh registered users in India), AI-generated media, e-commerce model. Runs first. |
+| `/classify` | Decides which duties apply: intermediary, social media intermediary, significant social media intermediary (more than 50 lakh registered users in India), AI-generated media, e-commerce model, including sellers on another company's marketplace. Runs first. |
 | `/catalog` | Looks up a clause, its clock, who it applies to, and whether it was checked against the gazette. |
 | `/grievance` | Named Grievance Officer, contact details and complaint route, published one click from home; acknowledgement and resolution clocks; the appeal route. |
 | `/takedown` | The admin action, runbook, on-call rota and audit log behind the 3-hour and 2-hour clocks; purge jobs that delete inside 180 days; government information requests. |
 | `/terms` | The three documents, the prohibited content clause, the three-monthly reminder and what it must say, AI warnings. |
 | `/ai-media` | Filters on every generation path, the label, provenance metadata, and any code that strips either. |
 | `/ssmi` | Chief Compliance Officer, nodal contact person, Resident Grievance Officer, India address, monthly report, notice before removal, the AI declaration on upload. |
-| `/ecom` | Consumer grievance officer displayed with designation, 48-hour acknowledgement, one-month redressal, ticket numbers. |
+| `/ecom` | Consumer grievance officer displayed with designation, 48-hour acknowledgement, one-month redressal, ticket numbers. For a seller on a marketplace, its own grievance officer and the details it gives the marketplace. |
 | `/audit` | Runs the checks the classification selects, in order, and writes the report and summary. |
 | `/draft` | Grievance Officer page, acknowledgement template, takedown runbook. |
 | `/export` | SARIF 2.1.0. |
@@ -126,7 +126,7 @@ The plugin carries the eleven skills, namespaced as `/nodal:audit`, `/nodal:clas
 
 Skills name rule ids. Clocks live only in [`catalog/rules.json`](catalog/rules.json), so an amendment is one edit to one file, and the validator rejects any finding whose clause the catalog does not have.
 
-Each rule carries a `verified` flag. It is `true` only where the clause number and the deadline were read in the gazette notification itself. All 38 rules are verified today, against these texts:
+Each rule carries a `verified` flag. It is `true` only where the clause number and the deadline were read in the gazette notification itself. All 41 rules are verified today, against these texts:
 
 | Notification | Read |
 |---|---|

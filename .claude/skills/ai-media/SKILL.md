@@ -49,7 +49,16 @@ Follow a generated file after creation and look for anything that modifies, hide
 
 Stripping metadata from ordinary user uploads is a privacy feature. It is a gap only where generated media passes through it.
 
-### 4. Acting on violations (`IT-3-1-cb`)
+### 4. A platform that hosts synthetic media it did not make (`IT-3-3-a-ii`, `IT-3-3-b`)
+
+Read the catalog note on `IT-3-3-a-ii` first. Where `/classify` recorded that users can upload synthetic media made elsewhere:
+
+- Does anything detect synthetic media on upload (a provenance metadata check, such as C2PA, or a classifier), and does a detected item get a label?
+- Does the upload pipeline strip provenance metadata that arrived with the file? Check 3 applies to uploaded files as well as generated ones.
+
+Whether rule 3(3) requires a host to detect and label media it did not make is a question of reading. Report the absence at medium at most, say in the issue text that the finding rests on reading the rule to reach hosts, and leave the question to counsel. For a significant social media intermediary, rule 4(1A) puts the duty beyond doubt: `/ssmi` covers it.
+
+### 5. Acting on violations (`IT-3-1-cb`)
 
 A report category for synthetic or deepfake content, and a moderation path that can remove the content and act on the account. Absence is "not found in the reviewed material".
 
@@ -68,4 +77,4 @@ A report category for synthetic or deepfake content, and a moderation path that 
 
 | Run | Action |
 |---|---|
-| `/ai-media` | Map the paths and run all four checks |
+| `/ai-media` | Map the paths and run all five checks |

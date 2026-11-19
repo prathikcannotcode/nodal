@@ -25,6 +25,8 @@ Rules and regulations (often "community guidelines"), a privacy policy and a use
 
 This skill does not review the privacy policy's content. That is DPDP work: point to Vigil.
 
+**Language.** Rules 3(1)(a) and 3(1)(b) say the documents are to be in English or an Eighth Schedule language "in the language of his choice"; rule 3(1)(c) asks for the reminder in English or an Eighth Schedule language. Record which languages the documents and the reminder are offered in, and whether the user can choose. If the product is offered in Indian languages but the documents are English only, report it at low and say that whether English alone satisfies "the language of his choice" is a question for counsel.
+
 ### 2. The prohibited content clause (`IT-3-1-b`)
 
 The terms or guidelines must tell users not to post the categories in the catalog obligation. Map each sub-clause to a sentence in the document. Wording need not match the rule; the substance must be there. Report the missing categories in one finding, by sub-clause numeral. Sub-clauses (ix) and (x) concern online games: do not report their absence for a product with no games, and note that online gaming is not checked. Sub-clause (v) of the rule also prints a limb on information that a Central Government fact check unit identifies as false. The Bombay High Court struck that limb down in 2024 and an appeal is pending, so do not report its absence either.

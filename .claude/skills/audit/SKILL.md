@@ -23,7 +23,7 @@ Run every check the classification selects, in order, and write one report. The 
    - `/terms` (tag `intermediary`)
    - `/ai-media` (tag `sgi`)
    - `/ssmi` (tag `ssmi`)
-   - `/ecom` (tag `ecom`)
+   - `/ecom` (tag `ecom` or `ecom-seller`)
 4. **Live site**, only if the user gave a URL: follow "Live-site checks" in `AGENTS.md`.
 5. **Write the report and summary.**
 6. Run `npm run validate -- --strict` and fix what it reports.

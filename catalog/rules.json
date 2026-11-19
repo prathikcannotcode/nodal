@@ -33,7 +33,7 @@
     },
     {
       "id": "IT-3-1-b", "instrument": "IT-RULES", "clause": "Rule 3(1)(b)", "applies_to": ["intermediary"],
-      "obligation": "Inform users of those documents and make reasonable efforts, by itself and through its users, that nobody hosts or shares information that: (i) belongs to another person and to which the user has no right; (ii) is obscene, pornographic, paedophilic, invasive of another's privacy including bodily privacy, insulting or harassing on the basis of gender, racially or ethnically objectionable, relates to or encourages money laundering or gambling, is an online game that causes user harm, or promotes enmity between groups on grounds of religion or caste with intent to incite violence; (iii) is harmful to a child; (iv) infringes a patent, trademark, copyright or other proprietary right; (v) deceives or misleads the addressee about the origin of a message, or knowingly and intentionally communicates misinformation or information that is patently false and untrue or misleading; (vi) impersonates another person; (vii) threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign States or public order, causes incitement to a cognisable offence, prevents investigation of an offence, or insults another nation; (viii) contains a virus or other code designed to interrupt, destroy or limit a computer resource; (ix), (x) concerns online games that are not permissible; (xi) violates any law.",
+      "obligation": "Inform users of those documents, in English or an Eighth Schedule language of the user's choice, and make reasonable efforts, by itself and through its users, that nobody hosts or shares information that: (i) belongs to another person and to which the user has no right; (ii) is obscene, pornographic, paedophilic, invasive of another's privacy including bodily privacy, insulting or harassing on the basis of gender, racially or ethnically objectionable, relates to or encourages money laundering or gambling, is an online game that causes user harm, or promotes enmity between groups on grounds of religion or caste with intent to incite violence; (iii) is harmful to a child; (iv) infringes a patent, trademark, copyright or other proprietary right; (v) deceives or misleads the addressee about the origin of a message, or knowingly and intentionally communicates misinformation or information that is patently false and untrue or misleading; (vi) impersonates another person; (vii) threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign States or public order, causes incitement to a cognisable offence, prevents investigation of an offence, or insults another nation; (viii) contains a virus or other code designed to interrupt, destroy or limit a computer resource; (ix), (x) concerns online games that are not permissible; (xi) violates any law.",
       "deadline": "Always",
       "evidence_hints": ["The prohibited content clause in the terms or community guidelines", "Report and moderation flows that act on those categories"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf",
@@ -41,11 +41,11 @@
     },
     {
       "id": "IT-3-1-c", "instrument": "IT-RULES", "clause": "Rule 3(1)(c)", "applies_to": ["intermediary"],
-      "obligation": "Periodically tell users, in a simple and effective manner, that: (i) on non-compliance with the terms the intermediary may terminate or suspend access immediately, or remove the information, or both; (ii) a user responsible for unlawful information may face penalty or punishment under the IT Act or other law; (iii) offences that must be reported under a law such as the Bharatiya Nyaya Sanhita, 2023 read with the Bharatiya Nagarik Suraksha Sanhita, 2023, or the POCSO Act, will be reported to the appropriate authority.",
+      "obligation": "Periodically tell users, in a simple and effective manner and in English or an Eighth Schedule language, that: (i) on non-compliance with the terms the intermediary may terminate or suspend access immediately, or remove the information, or both; (ii) a user responsible for unlawful information may face penalty or punishment under the IT Act or other law; (iii) offences that must be reported under a law such as the Bharatiya Nyaya Sanhita, 2023 read with the Bharatiya Nagarik Suraksha Sanhita, 2023, or the POCSO Act, will be reported to the appropriate authority.",
       "deadline": "At least once every three months",
       "evidence_hints": ["A scheduled job, cron entry or campaign that sends the reminder, and its interval", "The reminder template: does it carry all three limbs", "A log showing the last sends"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
-      "note": "Was once every year before 20 February 2026. Limb (iii) is stated as corrected by the corrigendum G.S.R. 148(E) of 26 February 2026, which was read in a consolidated text and not in the gazette."
+      "note": "Was once every year before 20 February 2026. Limb (iii) is unconfirmed against the gazette: it follows the corrigendum G.S.R. 148(E) of 26 February 2026, read only as a footnote in a consolidated text."
     },
     {
       "id": "IT-3-1-ca", "instrument": "IT-RULES", "clause": "Rule 3(1)(ca)", "applies_to": ["sgi"],
@@ -180,7 +180,7 @@
       "deadline": "Always",
       "evidence_hints": ["Where the label is drawn or attached", "Metadata writing at generation: C2PA, XMP, EXIF or a custom tag", "A unique identifier per asset or per generator", "Audio outputs: is the disclosure at the start"],
       "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
-      "note": "The notified text sets no size or duration for the label."
+      "note": "The notified text sets no size or duration for the label. Rule 3(3) reaches an intermediary whose resource may enable the 'sharing, or dissemination' of synthetic media, not only one that generates it. Whether that requires a platform that only hosts uploads to detect and label synthetic media is a question of reading for counsel."
     },
     {
       "id": "IT-3-3-b", "instrument": "IT-RULES", "clause": "Rule 3(3)(b)", "applies_to": ["sgi"],
@@ -229,7 +229,7 @@
     },
     {
       "id": "IT-4-4", "instrument": "IT-RULES", "clause": "Rule 4(4)", "applies_to": ["ssmi"],
-      "obligation": "Deploy appropriate technical measures, including automated tools, to proactively identify depictions of rape or child sexual abuse and copies of information already removed under rule 3(1)(d), show a notice to users who try to access it, keep human oversight, and review the tools periodically for accuracy, fairness, bias and privacy impact.",
+      "obligation": "Deploy appropriate technical measures, including automated tools or other suitable mechanisms, to proactively identify information that depicts any act or simulation in any form depicting rape, child sexual abuse or conduct, whether explicit or implicit, and information exactly identical to information previously removed or disabled under rule 3(1)(d), and display a notice to any user who tries to access it. The measures must be proportionate, having regard to free speech and expression and user privacy; they need appropriate human oversight and a periodic review of the automated tools for accuracy and fairness, propensity for bias and discrimination, and impact on privacy and security.",
       "deadline": "Always",
       "evidence_hints": ["Hash matching or classifier services on upload", "A review record for the automated tools"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
@@ -258,7 +258,7 @@
     },
     {
       "id": "EC-4-2", "instrument": "ECOM-RULES", "clause": "Rule 4(2)", "applies_to": ["ecom"],
-      "obligation": "Display prominently, in a clear and accessible manner: the legal name of the entity, the address of its headquarters and branches, its website, and contact details such as email, landline and mobile numbers of customer care and of the grievance officer.",
+      "obligation": "Provide, in a clear and accessible manner and displayed prominently to users: the legal name of the entity; the principal geographic address of its headquarters and all branches; the name and details of its website; and contact details such as email address, fax, landline and mobile numbers of customer care and of the grievance officer.",
       "deadline": "Always",
       "evidence_hints": ["Footer, contact and about pages", "The seller or company information block at checkout"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf",
@@ -304,6 +304,29 @@
       "obligation": "An inventory entity gives a ticket number for each complaint lodged, through which the consumer can track its status.",
       "deadline": "Always",
       "evidence_hints": ["Ticket number generation", "A complaint status page"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
+    },
+    {
+      "id": "EC-5-3-seller", "instrument": "ECOM-RULES", "clause": "Rule 5(3)", "applies_to": ["ecom-marketplace"],
+      "obligation": "A marketplace displays prominently, at the appropriate place on its platform, all information each seller provides under rule 6(5). That includes the name, contact numbers and designation of the seller's grievance officer.",
+      "deadline": "Always",
+      "evidence_hints": ["Product and seller pages: is the seller's grievance officer shown", "Seller onboarding: are those details collected"],
+      "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf",
+      "note": "The letter of this item did not survive text extraction from the gazette PDF. By position it is the fifth item, (e); that letter is unconfirmed, so cite Rule 5(3) without a letter."
+    },
+    {
+      "id": "EC-6-4-b", "instrument": "ECOM-RULES", "clause": "Rule 6(4)(b)", "applies_to": ["ecom-seller"],
+      "obligation": "A seller offering goods or services through a marketplace appoints a grievance officer for consumer grievance redressal and ensures that officer acknowledges every consumer complaint and redresses it.",
+      "deadline": "Acknowledge within 48 hours; redress within one month of receipt",
+      "evidence_hints": ["A named grievance officer for the seller, separate from the marketplace's", "SLA constants for complaints the marketplace forwards", "Where marketplace complaints land: a monitored inbox or ticket queue"],
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf",
+      "note": "A seller on a marketplace is not an e-commerce entity under rule 3(1)(b), so rule 4 does not apply to it unless it also sells on its own platform."
+    },
+    {
+      "id": "EC-6-5-e", "instrument": "ECOM-RULES", "clause": "Rule 6(5)(e)", "applies_to": ["ecom-seller"],
+      "obligation": "A seller gives the marketplace, for display on its platform, the name, contact numbers and designation of its grievance officer for consumer grievance redressal or for reporting any other matter.",
+      "deadline": "Always",
+      "evidence_hints": ["Seller profile or listing data sent to the marketplace", "The seller page as the marketplace shows it"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2020/220661.pdf"
     }
   ]
