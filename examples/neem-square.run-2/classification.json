@@ -1,0 +1,18 @@
+{
+  "company_id": "neem-square",
+  "classified_at": "2026-11-19T18:30:00Z",
+  "tags": ["intermediary", "smi", "ssmi", "sgi"],
+  "registered_users_india": 6200000,
+  "answers": [
+    { "question": "Does the product host, store or transmit content that users create or send?", "answer": "Yes. Users post text and images, comment and share. The post endpoint stores uploads and Imagine results.", "basis": "code", "file": "api/posts.py" },
+    { "question": "Is its main job to let two or more users interact and share content with each other?", "answer": "Yes. A social app: people post, follow each other, comment and share. Posts carry an audience (public or followers) and a comments switch.", "basis": "code", "file": "web/templates/upload.html" },
+    { "question": "Does it have more than 50 lakh registered users in India?", "answer": "Yes. About 62 lakh registered users in India as of September 2026, per the company facts in the README.", "basis": "code", "file": "README.md" },
+    { "question": "Has the Ministry made an order under rule 6 requiring the product to comply with rule 4?", "answer": "Not stated in the material supplied. The ssmi tag rests on the user count, so the answer does not change the tags.", "basis": "unconfirmed" },
+    { "question": "Can users create, edit or share AI-generated audio, images or video with it?", "answer": "Yes. Imagine generates images from text prompts and edits uploaded photos (restyle, swap a background, change what someone is wearing or doing), and the result can be posted to the feed. The product generates synthetic media itself as well as hosting it.", "basis": "code", "file": "services/imagine/generate.py" },
+    { "question": "Does it sell goods or services online, let others sell on it, or sell through another company's marketplace?", "answer": "No. Free and ad-funded. The footer Merch link opens a third-party print shop that Neem Square does not own or run, selling that party's goods: a link out, not e-commerce.", "basis": "code", "file": "web/templates/footer.html" }
+  ],
+  "unknowns": [
+    "Whether the Ministry has made an order under rule 6 for this product. Not stated in the README; it does not change the tags because the user count alone crosses the threshold.",
+    "The 62 lakh figure comes from the README's company facts, not from a user. A lawyer should confirm the registered-user count in India before the company relies on the ssmi tag."
+  ]
+}
