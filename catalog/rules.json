@@ -10,7 +10,8 @@
         { "number": "G.S.R. 794(E)", "date": "2022-10-28", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2022/239919.pdf", "note": "Substituted rule 3(1)(a), (b), (f) and 3(2)(a)(i); inserted 3(1)(m), (n) and rule 3A." },
         { "number": "G.S.R. 275(E)", "date": "2023-04-06", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf", "note": "Online gaming and fact-check amendments; renumbered 3(1)(b) to sub-clauses (i)-(xi); added the 'prominently publish' Explanation to rule 3(2)." },
         { "number": "G.S.R. 775(E)", "date": "2025-10-22", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2025/267089.pdf", "note": "In force 15 November 2025. Substituted rule 3(1)(d): actual knowledge arises only by a court order or a reasoned written intimation from an authorised senior officer, and intimations are reviewed every month by a Secretary-level officer." },
-        { "number": "G.S.R. 120(E)", "date": "2026-02-10", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf", "note": "In force 20 February 2026. Synthetically generated information, and the shorter clocks in rule 3(1)(c), 3(1)(d), 3(2)(a)(i) and 3(2)(b)." }
+        { "number": "G.S.R. 120(E)", "date": "2026-02-10", "read": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf", "note": "In force 20 February 2026. Synthetically generated information, and the shorter clocks in rule 3(1)(c), 3(1)(d), 3(2)(a)(i) and 3(2)(b)." },
+        { "number": "G.S.R. 148(E)", "date": "2026-02-26", "read": false, "note": "Corrigendum to G.S.R. 120(E). In rule 3(1)(c)(iii) and rule 3(1)(ca)(ii)(IV), for 'the Bharatiya Nagarik Suraksha Sanhita, 2023', read 'the Bharatiya Nyaya Sanhita, 2023 read with the Bharatiya Nagarik Suraksha Sanhita, 2023'. Seen only as a footnote in the consolidated text hosted by MIB, not in the gazette." }
       ]
     },
     {
@@ -32,19 +33,19 @@
     },
     {
       "id": "IT-3-1-b", "instrument": "IT-RULES", "clause": "Rule 3(1)(b)", "applies_to": ["intermediary"],
-      "obligation": "Inform users of those documents and make reasonable efforts, by itself and through its users, that nobody hosts or shares information that: (i) belongs to another person; (ii) is obscene, pornographic, paedophilic, invasive of privacy, harassing on the basis of gender, racially or ethnically objectionable, encourages money laundering or gambling, or promotes enmity between groups; (iii) is harmful to a child; (iv) infringes intellectual property; (v) deceives about the origin of a message or is knowingly false or misleading; (vi) impersonates another person; (vii) threatens the unity, security or sovereignty of India or public order; (viii) contains a virus or malicious code; (ix), (x) concerns online games that are not permissible; (xi) violates any law.",
+      "obligation": "Inform users of those documents and make reasonable efforts, by itself and through its users, that nobody hosts or shares information that: (i) belongs to another person and to which the user has no right; (ii) is obscene, pornographic, paedophilic, invasive of another's privacy including bodily privacy, insulting or harassing on the basis of gender, racially or ethnically objectionable, relates to or encourages money laundering or gambling, is an online game that causes user harm, or promotes enmity between groups on grounds of religion or caste with intent to incite violence; (iii) is harmful to a child; (iv) infringes a patent, trademark, copyright or other proprietary right; (v) deceives or misleads the addressee about the origin of a message, or knowingly and intentionally communicates misinformation or information that is patently false and untrue or misleading; (vi) impersonates another person; (vii) threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign States or public order, causes incitement to a cognisable offence, prevents investigation of an offence, or insults another nation; (viii) contains a virus or other code designed to interrupt, destroy or limit a computer resource; (ix), (x) concerns online games that are not permissible; (xi) violates any law.",
       "deadline": "Always",
       "evidence_hints": ["The prohibited content clause in the terms or community guidelines", "Report and moderation flows that act on those categories"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf",
-      "note": "Sub-clauses (ix) and (x) on online games came from G.S.R. 275(E). Whether later online gaming legislation changed them was not checked."
+      "note": "Sub-clauses (ix) and (x), and the online game limb of (ii), came from G.S.R. 275(E). Whether later online gaming legislation changed them was not checked. Sub-clause (v) also prints a limb on information that a notified Central Government fact check unit identifies as fake, false or misleading. The Bombay High Court struck that limb down in Kunal Kamra v. Union of India (September 2024); the Union's appeal is before the Supreme Court, which refused a stay. That status comes from court reporting, not from the orders. The obligation above leaves the limb out for that reason."
     },
     {
       "id": "IT-3-1-c", "instrument": "IT-RULES", "clause": "Rule 3(1)(c)", "applies_to": ["intermediary"],
-      "obligation": "Periodically tell users, in a simple and effective manner, that: (i) on non-compliance with the terms the intermediary may terminate or suspend access immediately, or remove the information, or both; (ii) a user responsible for unlawful information may face penalty or punishment under the IT Act or other law; (iii) offences that must be reported under a law such as the BNSS 2023 or the POCSO Act will be reported to the appropriate authority.",
+      "obligation": "Periodically tell users, in a simple and effective manner, that: (i) on non-compliance with the terms the intermediary may terminate or suspend access immediately, or remove the information, or both; (ii) a user responsible for unlawful information may face penalty or punishment under the IT Act or other law; (iii) offences that must be reported under a law such as the Bharatiya Nyaya Sanhita, 2023 read with the Bharatiya Nagarik Suraksha Sanhita, 2023, or the POCSO Act, will be reported to the appropriate authority.",
       "deadline": "At least once every three months",
       "evidence_hints": ["A scheduled job, cron entry or campaign that sends the reminder, and its interval", "The reminder template: does it carry all three limbs", "A log showing the last sends"],
       "default_severity": "medium", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2026/269993.pdf",
-      "note": "Was once every year before 20 February 2026."
+      "note": "Was once every year before 20 February 2026. Limb (iii) is stated as corrected by the corrigendum G.S.R. 148(E) of 26 February 2026, which was read in a consolidated text and not in the gazette."
     },
     {
       "id": "IT-3-1-ca", "instrument": "IT-RULES", "clause": "Rule 3(1)(ca)", "applies_to": ["sgi"],
@@ -82,7 +83,7 @@
       "deadline": "180 days, or longer if a court or an authorised agency requires",
       "evidence_hints": ["Delete or purge jobs that touch removed, hidden or moderated content", "Retention settings on object storage and moderation tables", "Whether 'associated records' such as uploader, timestamps and logs survive"],
       "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
-      "note": "In tension with erasure duties under the DPDP Act. nodal reports the tension and refers to Vigil; it does not resolve it."
+      "note": "Overlaps with the DPDP Act. Sections 8(7) and 12(3) of that Act except retention necessary for compliance with a law in force, and this clause is such a law for its 180 days. Those sections come into force in May 2027 under G.S.R. 843(E) of 13 November 2025. What may be kept after day 180, and which records the clause reaches, are questions for counsel. nodal reports the overlap and refers to Vigil; it does not resolve it."
     },
     {
       "id": "IT-3-1-h", "instrument": "IT-RULES", "clause": "Rule 3(1)(h)", "applies_to": ["intermediary"],
@@ -90,7 +91,7 @@
       "deadline": "180 days after cancellation or withdrawal",
       "evidence_hints": ["Account closure and deletion jobs", "What happens to the registration fields: email, phone, signup metadata"],
       "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
-      "note": "In tension with erasure duties under the DPDP Act. nodal reports the tension and refers to Vigil; it does not resolve it."
+      "note": "Overlaps with the DPDP Act. Sections 8(7) and 12(3) of that Act except retention necessary for compliance with a law in force, and this clause is such a law for its 180 days. Those sections come into force in May 2027 under G.S.R. 843(E) of 13 November 2025. What may be kept after day 180, and which records the clause reaches, are questions for counsel. nodal reports the overlap and refers to Vigil; it does not resolve it."
     },
     {
       "id": "IT-3-1-j", "instrument": "IT-RULES", "clause": "Rule 3(1)(j)", "applies_to": ["intermediary"],
@@ -190,25 +191,27 @@
     },
     {
       "id": "IT-4-1-a", "instrument": "IT-RULES", "clause": "Rule 4(1)(a)", "applies_to": ["ssmi"],
-      "obligation": "Appoint a Chief Compliance Officer: key managerial personnel or another senior employee, resident in India, responsible for compliance with the Act and rules.",
-      "deadline": "Within three months of crossing the threshold",
+      "obligation": "Appoint a Chief Compliance Officer: key managerial personnel or another senior employee, resident in India, responsible for compliance with the Act and rules. That officer is liable in any proceedings relating to relevant third-party information, data or communication link made available or hosted by the intermediary where the officer fails to ensure that the intermediary observes due diligence. No liability may be imposed without an opportunity of being heard.",
+      "deadline": "No period for an intermediary that reaches the threshold today. The three months in the rule ran from the notification of the threshold on 25 February 2021 and ended in May 2021",
       "evidence_hints": ["The contact or legal page naming the officer", "Internal role documents"],
       "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
-      "note": "The rule requires the appointment. Rule 4(5) and Rule 3(2)(a) are what require details to be published."
+      "note": "The rule requires the appointment. Rule 4(5) and Rule 3(2)(a) are what require details to be published. The rule states no period for an intermediary that crosses fifty lakh registered users after May 2021. Whether any period is implied is a question for counsel; the text gives none."
     },
     {
       "id": "IT-4-1-b", "instrument": "IT-RULES", "clause": "Rule 4(1)(b)", "applies_to": ["ssmi"],
       "obligation": "Appoint a nodal contact person for 24x7 coordination with law enforcement: an employee other than the Chief Compliance Officer, resident in India.",
-      "deadline": "Within three months of crossing the threshold",
+      "deadline": "No period for an intermediary that reaches the threshold today. The three months in the rule ran from the notification of the threshold on 25 February 2021 and ended in May 2021",
       "evidence_hints": ["The contact page or law enforcement guidelines naming the role", "An on-call rota that is 24x7"],
-      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf"
+      "default_severity": "high", "verified": true, "source_url": "https://egazette.gov.in/WriteReadData/2023/244980.pdf",
+      "note": "The rule states no period for an intermediary that crosses fifty lakh registered users after May 2021. Whether any period is implied is a question for counsel; the text gives none."
     },
     {
       "id": "IT-4-1-c", "instrument": "IT-RULES", "clause": "Rule 4(1)(c)", "applies_to": ["ssmi"],
       "obligation": "Appoint a Resident Grievance Officer: an employee resident in India who performs the Grievance Officer's functions under rule 3(2).",
-      "deadline": "Within three months of crossing the threshold",
+      "deadline": "No period for an intermediary that reaches the threshold today. The three months in the rule ran from the notification of the threshold on 25 February 2021 and ended in May 2021",
       "evidence_hints": ["The grievance page: is the named officer described as resident in India"],
-      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf"
+      "default_severity": "high", "verified": true, "source_url": "https://prsindia.org/files/bills_acts/bills_parliament/2021/Intermediary_Guidelines_and_Digital_Media_Ethics_Code_Rules-2021.pdf",
+      "note": "The rule states no period for an intermediary that crosses fifty lakh registered users after May 2021. Whether any period is implied is a question for counsel; the text gives none."
     },
     {
       "id": "IT-4-1-d", "instrument": "IT-RULES", "clause": "Rule 4(1)(d)", "applies_to": ["ssmi"],

@@ -41,9 +41,9 @@ Only when the user gives a URL. Fetch public pages with GET requests: the home p
 
 No personal data in findings, summaries or drafts. A Grievance Officer's published name is fine: publishing it is the point of the rule. A user's complaint, a complainant's name or contact, and anything from a fixture or a database is not. Reference those by file and line.
 
-## The DPDP tension
+## The DPDP overlap
 
-Rule 3(1)(g) and 3(1)(h) require keeping removed content and registration data for 180 days. The DPDP Act requires erasure in some of the same cases. When a purge job sits in that overlap, report the IT Rules gap, name the tension in `cross_reference`, and point the user to Vigil. Do not resolve it.
+Rule 3(1)(g) and 3(1)(h) require keeping removed content and registration data for 180 days. The DPDP Act requires erasure in some of the same cases, but its sections 8(7) and 12(3) except retention that is needed to comply with a law, and these rules are such a law for their 180 days. When a purge job deletes inside that period, report the IT Rules gap, name the overlap in `cross_reference`, and point the user to Vigil. Do not say what may be kept after day 180 or which records the rules reach: that is for counsel.
 
 ## Every report carries
 
@@ -57,7 +57,8 @@ Rule 3(1)(g) and 3(1)(h) require keeping removed content and registration data f
   - Whether a particular court order or government intimation is valid under rule 3(1)(d): nodal checks that a process exists to read one against the rule, not any actual order
   - E-Commerce Rules beyond grievance duties
   - RBI, SEBI, IRDAI, TRAI and other sector rules
-  - Any amendment notified after G.S.R. 120(E) of 10 February 2026
+  - Blocking orders under section 69A of the IT Act and the Blocking Rules, 2009
+  - Any amendment or corrigendum notified after G.S.R. 120(E) of 10 February 2026. A draft Second Amendment was published on 30 March 2026; whether it has been notified was not checked
   - Whether the product is an intermediary in law: the classification records the user's answer and what the code shows
 
   Add what this run skipped: catalog rules not examined, the live site if not fetched, material not supplied.

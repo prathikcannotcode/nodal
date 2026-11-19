@@ -1,5 +1,27 @@
 # Changelog
 
+## Unreleased
+
+### Skills
+- Reports take `law_as_at` from the latest notification marked read, not from the catalog's `last_verified`. `summary.md` and every draft print both dates.
+- `summary.md` states the rule 7 consequence once: failing to observe the rules removes section 79(1) protection.
+- `/classify` asks whether the Ministry has made a rule 6 order applying rule 4 below the threshold.
+- `/terms` no longer expects the fact check unit limb of rule 3(1)(b)(v), which the Bombay High Court struck down.
+- `/takedown` and `AGENTS.md` describe the DPDP overlap as the Act does: sections 8(7) and 12(3) except retention needed to comply with a law.
+
+### Not checked list
+- Adds blocking orders under section 69A and the draft Second Amendment of 30 March 2026.
+
+### Catalog
+- `IT-4-1-a`, `IT-4-1-b` and `IT-4-1-c` no longer give three months from crossing the threshold. Rule 4(1) counts three months from the notification of the threshold on 25 February 2021, so an intermediary that crosses it today has no period. `IT-4-1-a` adds the Chief Compliance Officer's liability.
+- Adds the corrigendum G.S.R. 148(E) of 26 February 2026, marked unread. `IT-3-1-c` carries the corrected third limb and a note saying so.
+- `IT-3-1-b` restores the limbs of sub-clauses (ii), (v) and (vii) that its summary left out, and notes that the Bombay High Court struck down the fact check unit limb of (v).
+- `IT-3-1-g` and `IT-3-1-h` describe the DPDP overlap as sections 8(7) and 12(3) do.
+- These changes were read in the consolidated text hosted by MIB, updated to 10 February 2026, and not in the gazette PDFs.
+
+### Schemas
+- The `law_as_at` description matches the skills, and the `ssmi` tag description includes a rule 6 order.
+
 ## 0.1.1 (15 November 2026)
 
 ### Catalog

@@ -18,7 +18,7 @@ Turn findings into first drafts a lawyer and an engineer can finish. Every clock
 - Read the classification and the latest report first. Draft for the tags that apply: an SSMI page names three officers; an e-commerce page adds the designation.
 - Fill clocks from the catalog and cite the rule id beside each, so a later amendment is easy to trace.
 - Never invent a name, address, email, phone number or date. Use placeholders in capitals inside square brackets, such as `[GRIEVANCE OFFICER NAME]`, and list every placeholder at the top of the file under "Fill these in".
-- Start each file with: "DRAFT for legal review. Not legal advice. Clocks as at {catalog last_verified}."
+- Start each file with: "DRAFT for legal review. Not legal advice. Clocks from the rule catalog, as amended up to {date of the latest notification marked read}; catalog last checked {last_verified}."
 - Plain language. A complainant in distress reads these.
 - Write to `assessments/{assessment_id}/drafts/`. Do not edit the audited product's files; the team applies the drafts.
 

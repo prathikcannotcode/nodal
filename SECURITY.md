@@ -28,7 +28,7 @@ The validator checks that each reference in a finding's `clause` is a clause in 
 
 ### The catalog
 
-`verified: true` means a person or an agent read the clause number and the deadline in the gazette text on the `last_verified` date. It does not mean the entry's summary of the obligation is complete, and it says nothing about amendments after that date. One notification has not been read; `catalog/rules.json` lists it with `read: false`.
+`verified: true` means a person or an agent read the clause number and the deadline in the gazette text on the `last_verified` date. It does not mean the entry's summary of the obligation is complete, and it says nothing about amendments after that date. Two notifications have not been read; `catalog/rules.json` lists them with `read: false`.
 
 ### Classification
 

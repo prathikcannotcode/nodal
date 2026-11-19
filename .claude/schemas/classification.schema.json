@@ -9,7 +9,7 @@
     "classified_at": { "type": "string", "format": "date-time" },
     "tags": {
       "type": "array",
-      "description": "Empty means the product neither handles user content nor sells online: nothing in scope applies. intermediary: hosts, stores or transmits third-party content. smi: social media intermediary. ssmi: 50 lakh or more registered users in India. sgi: lets users create or share synthetically generated audio, image or video. ecom, ecom-marketplace, ecom-inventory: e-commerce entity and its model.",
+      "description": "Empty means the product neither handles user content nor sells online: nothing in scope applies. intermediary: hosts, stores or transmits third-party content. smi: social media intermediary. ssmi: 50 lakh or more registered users in India, or an order under rule 6 applying rule 4. sgi: lets users create or share synthetically generated audio, image or video. ecom, ecom-marketplace, ecom-inventory: e-commerce entity and its model.",
       "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory"] }
     },
     "registered_users_india": { "type": "integer", "minimum": 0, "description": "Leave out if unknown; never guess" },

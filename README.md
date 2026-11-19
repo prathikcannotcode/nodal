@@ -136,10 +136,13 @@ Each rule carries a `verified` flag. It is `true` only where the clause number a
 | G.S.R. 275(E), 6 Apr 2023 | Yes |
 | G.S.R. 775(E), 22 Oct 2025 | Yes |
 | G.S.R. 120(E), 10 Feb 2026 | Yes |
+| G.S.R. 148(E), 26 Feb 2026: corrigendum to G.S.R. 120(E) | **No** |
 | G.S.R. 462(E), 23 Jul 2020: E-Commerce Rules | Yes |
 | G.S.R. 328(E), 17 May 2021: E-Commerce amendment | **No** |
 
-The one gap is narrow. G.S.R. 328(E) is reported to touch only E-Commerce rule 4(1), on the nodal officer, and the catalog leaves that rule out.
+Both gaps are narrow. G.S.R. 148(E) corrects which criminal statute rule 3(1)(c)(iii) and rule 3(1)(ca) name; no clock depends on it. G.S.R. 328(E) is reported to touch only E-Commerce rule 4(1), on the nodal officer, and the catalog leaves that rule out.
+
+A report's `law_as_at` is the date of the latest notification read, not the day the catalog was last checked.
 
 Rule 3(1)(d) deserves a second look by anyone who runs a takedown desk. Since November 2025 a government intimation counts only if it is in writing, gives reasons, comes from an authorised officer of at least Joint Secretary rank (a Director where that rank is not appointed; Deputy Inspector General for the police), and names the legal basis, the unlawful act and the specific URL. Since February 2026 the officer's authorisation must itself be by order in writing, and the clock is three hours. The rule does not say what a platform should do with an intimation that falls short, so nodal checks that your runbook reads each one against those conditions and leaves the rest to counsel.
 
@@ -156,9 +159,9 @@ Two things in the starting brief turned out differently in the gazette. The thre
 
 ## Not checked
 
-DPDP (use [Vigil](https://github.com/prathikcannotcode/Vigil)). Part III of the IT Rules on digital media publishers. The online gaming provisions. Rule 3(1)(i), (k), (l), (m) and (n). Rule 4(2), 4(3) and 4(7). The E-Commerce Rules beyond grievance duties. RBI, SEBI, IRDAI, TRAI and other sector rules. Anything notified after 10 February 2026. Every report repeats this list.
+DPDP (use [Vigil](https://github.com/prathikcannotcode/Vigil)). Part III of the IT Rules on digital media publishers. The online gaming provisions. Rule 3(1)(i), (k), (l), (m) and (n). Rule 4(2), 4(3) and 4(7). The E-Commerce Rules beyond grievance duties. RBI, SEBI, IRDAI, TRAI and other sector rules. Blocking orders under section 69A of the IT Act. Anything notified after 10 February 2026, which includes the draft Second Amendment published on 30 March 2026 if it has since been notified. Every report repeats this list.
 
-One overlap nodal reports and does not resolve: rules 3(1)(g) and 3(1)(h) require keeping some data for 180 days that the DPDP Act may require you to erase sooner. A finding there names the tension and sends you to Vigil and to counsel.
+One overlap nodal reports and does not resolve: rules 3(1)(g) and 3(1)(h) require keeping some data for 180 days, and the DPDP Act has its own erasure duties for the same data. Sections 8(7) and 12(3) of that Act except retention needed to comply with a law, so the 180 days stand. What may be kept after day 180 is a question for counsel. A finding there names the overlap and sends you to Vigil.
 
 ## Disclaimer
 

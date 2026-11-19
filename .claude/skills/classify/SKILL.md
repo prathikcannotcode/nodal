@@ -27,8 +27,9 @@ Ask the user, then look for confirmation in the repo. Record each answer with it
 
 Rules for the tags:
 
-- `smi` needs `intermediary`. `ssmi` needs `smi`.
+- `smi` needs `intermediary`. `ssmi` needs `smi`, except under a rule 6 order (below).
 - Question 3 is a number the company knows. If nobody answers, leave `ssmi` out, record the question under `unknowns`, and say in the output that the SSMI duties were not checked for that reason. Never guess the number.
+- With question 3, ask whether the Ministry has made an order under rule 6 requiring the product to comply with rule 4. Such an order can apply all or part of rule 4 to an intermediary below the threshold. If yes, add `ssmi`, record the order under `answers`, and list under `unknowns` which parts of rule 4 it applies if the user did not say. If nobody answers, record the question under `unknowns`.
 - `sgi` covers content that looks real: a synthetic photo, voice or video. Routine editing (crop, colour, noise reduction, compression), documents and slides, and accessibility or translation features are carved out of the definition. A product with only those gets no `sgi` tag; note why.
 - A link out to someone else's shop is not e-commerce.
 - If questions 1 and 5 are both "no", `tags` is empty. Say that the IT Rules Part II and the E-Commerce Rules grievance duties do not apply on these answers, store the file, and stop.
