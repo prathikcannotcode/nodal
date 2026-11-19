@@ -45,7 +45,7 @@
           "id": { "type": "string", "pattern": "^(IT|EC)-[0-9A-Za-z-]+$" },
           "instrument": { "type": "string", "enum": ["IT-RULES", "ECOM-RULES"] },
           "clause": { "type": "string", "pattern": "^Rule [0-9]+[A-Z]?(\\([0-9A-Za-z]+\\))*$", "description": "One reference, written the way findings must cite it" },
-          "applies_to": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory"] }, "description": "The rule applies if the classification has any of these tags" },
+          "applies_to": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory", "ecom-seller"] }, "description": "The rule applies if the classification has any of these tags" },
           "obligation": { "type": "string", "minLength": 1 },
           "deadline": { "type": "string", "minLength": 1, "description": "The clock, e.g. '36 hours from the complaint', or 'Always'" },
           "evidence_hints": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },

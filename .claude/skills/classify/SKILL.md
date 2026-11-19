@@ -21,9 +21,9 @@ Ask the user, then look for confirmation in the repo. Record each answer with it
 |---|---|---|---|
 | 1 | Does the product host, store or transmit content that users create or send? | `intermediary` | Upload and post endpoints, comment or message tables, object storage for user media |
 | 2 | Is its main job to let two or more users interact and share content with each other? | `smi` | Feeds, follows, shares, group chat, public profiles |
-| 3 | Does it have 50 lakh (5 million) or more registered users in India? | `ssmi` | Rarely in code. Ask. A README, pitch deck or config comment with user numbers counts as `code` |
+| 3 | Does it have more than 50 lakh (5 million) registered users in India? Rule 2(1)(v) says "above" the threshold. | `ssmi` | Rarely in code. Ask. A README, pitch deck or config comment with user numbers counts as `code` |
 | 4 | Can users create, edit or share AI-generated audio, images or video with it? | `sgi` | Calls to image, video or voice models, a generation service, "AI" upload paths |
-| 5 | Does it sell goods or services online, or let others sell on it? | `ecom`, plus `ecom-marketplace` (others sell) or `ecom-inventory` (it sells its own stock) | Cart, checkout, orders, seller onboarding |
+| 5 | Does it sell goods or services online, let others sell on it, or sell through another company's marketplace? | `ecom`, plus `ecom-marketplace` (others sell) or `ecom-inventory` (it sells its own stock) on its own platform; `ecom-seller` for sales through another company's marketplace | Cart, checkout, orders, seller onboarding; marketplace seller APIs, listing feeds, order sync jobs |
 
 Rules for the tags:
 
@@ -31,7 +31,9 @@ Rules for the tags:
 - Question 3 is a number the company knows. If nobody answers, leave `ssmi` out, record the question under `unknowns`, and say in the output that the SSMI duties were not checked for that reason. Never guess the number.
 - With question 3, ask whether the Ministry has made an order under rule 6 requiring the product to comply with rule 4. Such an order can apply all or part of rule 4 to an intermediary below the threshold. If yes, add `ssmi`, record the order under `answers`, and list under `unknowns` which parts of rule 4 it applies if the user did not say. If nobody answers, record the question under `unknowns`.
 - `sgi` covers content that looks real: a synthetic photo, voice or video. Routine editing (crop, colour, noise reduction, compression), documents and slides, and accessibility or translation features are carved out of the definition. A product with only those gets no `sgi` tag; note why.
-- A link out to someone else's shop is not e-commerce.
+- Under question 4, record whether the product generates synthetic media itself or only lets users upload and share it. Rule 3(3) can be read to reach both, so a host that generates nothing still gets `sgi`; `/ai-media` checks it differently and flags the reading for counsel.
+- A seller on someone else's marketplace is not an "e-commerce entity" under the E-Commerce Rules, so it gets `ecom-seller` without `ecom`. Add `ecom` as well only if it also sells on its own site or app.
+- A link out to a third party's shop, selling that party's goods, is not e-commerce. A link to the company's own listings on a marketplace is `ecom-seller`.
 - If questions 1 and 5 are both "no", `tags` is empty. Say that the IT Rules Part II and the E-Commerce Rules grievance duties do not apply on these answers, store the file, and stop.
 
 Whether a product is an intermediary in law can be a hard question (a company that publishes its own content is not one for that content). Record the answer you were given and what the code shows. Flag a mismatch between the two as an unknown; do not settle it.

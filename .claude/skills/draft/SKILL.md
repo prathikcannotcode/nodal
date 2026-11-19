@@ -32,6 +32,7 @@ Turn findings into first drafts a lawyer and an engineer can finish. Every clock
 - The appeal route to the Grievance Appellate Committee and its window (`IT-3A-3`).
 - If `ssmi`: the Chief Compliance Officer, the nodal contact person, the Resident Grievance Officer and the contact address in India (placeholders), per `IT-4-1-a` to `IT-4-1-c` and `IT-4-5`.
 - If `ecom`: the consumer grievance officer's name, designation and contact, with the clocks in `EC-4-5`. Keep the two sets of clocks apart and say which complaints each covers.
+- If `ecom-seller` alone: no grievance page on the company's own site is required by these rules. Draft instead the officer details to give each marketplace (`EC-6-5-e`) and an acknowledgement for forwarded complaints with the clocks in `EC-6-4-b`.
 - A note for the engineer: link this page from the home page or footer, so it is one click from home.
 
 ### `acknowledgement-template.md`

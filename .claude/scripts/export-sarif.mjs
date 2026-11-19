@@ -7,7 +7,7 @@
  *        node .claude/scripts/export-sarif.mjs --company <id> --output findings.sarif
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { loadFindings, requireReport, packageVersion } from './lib.mjs';
 
 const args = process.argv.slice(2);
@@ -25,6 +25,10 @@ if (!inputFile && !company) {
   process.exit(1);
 }
 
+if (inputFile && !existsSync(inputFile)) {
+  console.error(`No report at ${inputFile}. Give the path to an assessments/<id>/report.json, or use --company <id>.`);
+  process.exit(1);
+}
 if (!inputFile) requireReport(company);
 
 const all = inputFile

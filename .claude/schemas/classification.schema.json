@@ -9,8 +9,8 @@
     "classified_at": { "type": "string", "format": "date-time" },
     "tags": {
       "type": "array",
-      "description": "Empty means the product neither handles user content nor sells online: nothing in scope applies. intermediary: hosts, stores or transmits third-party content. smi: social media intermediary. ssmi: 50 lakh or more registered users in India, or an order under rule 6 applying rule 4. sgi: lets users create or share synthetically generated audio, image or video. ecom, ecom-marketplace, ecom-inventory: e-commerce entity and its model.",
-      "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory"] }
+      "description": "Empty means the product neither handles user content nor sells online: nothing in scope applies. intermediary: hosts, stores or transmits third-party content. smi: social media intermediary. ssmi: more than 50 lakh registered users in India (rule 2(1)(v) says above the threshold), or an order under rule 6 applying rule 4. sgi: lets users create or share synthetically generated audio, image or video. ecom, ecom-marketplace, ecom-inventory: e-commerce entity and its model. ecom-seller: sells through another company's marketplace; such a seller is not an e-commerce entity, so it takes this tag without ecom unless it also sells on its own platform.",
+      "items": { "type": "string", "enum": ["intermediary", "smi", "ssmi", "sgi", "ecom", "ecom-marketplace", "ecom-inventory", "ecom-seller"] }
     },
     "registered_users_india": { "type": "integer", "minimum": 0, "description": "Leave out if unknown; never guess" },
     "answers": {
